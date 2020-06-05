@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    354
+                    337
                 </div>
                 
 
@@ -430,78 +430,74 @@
 <p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/longest-consecutive-sequence" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-consecutive-sequence</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。  </p>
 <p><strong>我的思路</strong>：  </p>
 <ul>
-<li><p>保存最大值和最小值，使用桶的思想，将最小元素放入第一个位置。List长度为max - min + 1。但是经过验证，数据max - min + 1值非常大，造成内存溢出。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword">def</span> <span class="token function">longestConsecutive</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-      <span class="token triple-quoted-string string">"""
-      :type nums: List[int]
-      :rtype: int
-      """</span>
-      <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-          <span class="token keyword">return</span> <span class="token number">0</span>
-
-      maxnum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-      minnum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-
-      <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-          <span class="token keyword">if</span> num <span class="token operator">></span> maxnum<span class="token punctuation">:</span>
-              maxnum <span class="token operator">=</span> num
-          <span class="token keyword">if</span> num <span class="token operator">&lt;</span> minnum<span class="token punctuation">:</span>
-              minnum <span class="token operator">=</span> num
-
-      has <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-      <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>maxnum <span class="token operator">-</span> minnum <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-          has<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-
-      <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-          has<span class="token punctuation">[</span>num<span class="token operator">-</span>minnum<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
-
-      maxlen <span class="token operator">=</span> <span class="token number">1</span>
-      templen <span class="token operator">=</span> <span class="token number">0</span>
-
-      <span class="token keyword">for</span> s <span class="token keyword">in</span> has<span class="token punctuation">:</span>
-          <span class="token keyword">if</span> s <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-              templen <span class="token operator">=</span> templen <span class="token operator">+</span> <span class="token number">1</span>
-              <span class="token keyword">if</span> templen <span class="token operator">></span> maxlen<span class="token punctuation">:</span>
-                  maxlen <span class="token operator">=</span> templen
-          <span class="token keyword">else</span><span class="token punctuation">:</span>
-              templen <span class="token operator">=</span> <span class="token number">0</span>
-
-      <span class="token keyword">return</span> maxlen
-</code></pre>
-</li>
+<li>保存最大值和最小值，使用桶的思想，将最小元素放入第一个位置。List长度为max - min + 1。但是经过验证，数据max - min + 1值非常大，造成内存溢出。</li>
 </ul>
-<pre><code>
-**官网题解：**  思路清晰
-![](https://i.loli.net/2020/06/06/RfiVgwJumsUrte2.png)
-
-```python
-class Solution(object):
-    def longestConsecutive(self, nums):
-        &quot;&quot;&quot;
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">longestConsecutive</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
         :type nums: List[int]
         :rtype: int
-        &quot;&quot;&quot;
-        if len(nums) == 0:
-            return 0
+        """</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
 
-        numset = set(nums) # 时间复杂度O(n)
-        maxlen = 1
-        curlen = 0
+        maxnum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        minnum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 
-        for num in numset:
-            if num - 1 in numset:
-                continue
-            else:
-                curlen = 1
-                nextnum = num + 1
-                while nextnum in numset:
-                    curlen = curlen + 1
-                    nextnum = nextnum + 1
-                if curlen &gt; maxlen:
-                    maxlen = curlen
+        <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> num <span class="token operator">></span> maxnum<span class="token punctuation">:</span>
+                maxnum <span class="token operator">=</span> num
+            <span class="token keyword">if</span> num <span class="token operator">&lt;</span> minnum<span class="token punctuation">:</span>
+                minnum <span class="token operator">=</span> num
 
-        return maxlen</code></pre>
+        has <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>maxnum <span class="token operator">-</span> minnum <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            has<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+            has<span class="token punctuation">[</span>num<span class="token operator">-</span>minnum<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+
+        maxlen <span class="token operator">=</span> <span class="token number">1</span>
+        templen <span class="token operator">=</span> <span class="token number">0</span>
+
+        <span class="token keyword">for</span> s <span class="token keyword">in</span> has<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> s <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+                templen <span class="token operator">=</span> templen <span class="token operator">+</span> <span class="token number">1</span>
+                <span class="token keyword">if</span> templen <span class="token operator">></span> maxlen<span class="token punctuation">:</span>
+                    maxlen <span class="token operator">=</span> templen
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                templen <span class="token operator">=</span> <span class="token number">0</span>
+
+        <span class="token keyword">return</span> maxlen
+</code></pre>
+<p><strong>官网题解：</strong>  思路清晰<br><img src="https://i.loli.net/2020/06/06/RfiVgwJumsUrte2.png" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">longestConsecutive</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type nums: List[int]
+        :rtype: int
+        """</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+
+        numset <span class="token operator">=</span> set<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 时间复杂度O(n)</span>
+        maxlen <span class="token operator">=</span> <span class="token number">1</span>
+        curlen <span class="token operator">=</span> <span class="token number">0</span>
+
+        <span class="token keyword">for</span> num <span class="token keyword">in</span> numset<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> num <span class="token operator">-</span> <span class="token number">1</span> <span class="token keyword">in</span> numset<span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                curlen <span class="token operator">=</span> <span class="token number">1</span>
+                nextnum <span class="token operator">=</span> num <span class="token operator">+</span> <span class="token number">1</span>
+                <span class="token keyword">while</span> nextnum <span class="token keyword">in</span> numset<span class="token punctuation">:</span>
+                    curlen <span class="token operator">=</span> curlen <span class="token operator">+</span> <span class="token number">1</span>
+                    nextnum <span class="token operator">=</span> nextnum <span class="token operator">+</span> <span class="token number">1</span>
+                <span class="token keyword">if</span> curlen <span class="token operator">></span> maxlen<span class="token punctuation">:</span>
+                    maxlen <span class="token operator">=</span> curlen
+
+        <span class="token keyword">return</span> maxlen</code></pre>
+
             </div>
             <hr/>
 
