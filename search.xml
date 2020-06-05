@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python语法 不定长参数</title>
+      <link href="/2020/06/05/10789.html"/>
+      <url>/2020/06/05/10789.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="python语法-不定长参数"><a href="#python语法-不定长参数" class="headerlink" title="python语法 不定长参数"></a>python语法 不定长参数</h1><h3 id="一、任意数量的参数值"><a href="#一、任意数量的参数值" class="headerlink" title="一、任意数量的参数值"></a>一、任意数量的参数值</h3><p>特点：一个函数只能有一个该参数，且只能放在最右边。</p><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">watermelon</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token operator">*</span>attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token keyword">for</span> attribute <span class="token keyword">in</span> attributes<span class="token punctuation">:</span>        <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>watermelon<span class="token punctuation">(</span><span class="token string">"西瓜"</span><span class="token punctuation">,</span> <span class="token string">"厚皮"</span><span class="token punctuation">,</span> <span class="token string">"少籽"</span><span class="token punctuation">,</span> <span class="token string">"甜"</span><span class="token punctuation">)</span></code></pre><p><img src="https://i.loli.net/2020/06/05/IbNR5PsqhfxOXiW.png" alt="运行结果"></p><h3 id="二、任意数量的键值对"><a href="#二、任意数量的键值对" class="headerlink" title="二、任意数量的键值对"></a>二、任意数量的键值对</h3><p>特点：用法和前面的相同，但是传递的键值对。</p><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">watermelon</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token operator">**</span>attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token keyword">for</span> attribute <span class="token keyword">in</span> attributes<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>watermelon<span class="token punctuation">(</span><span class="token string">"西瓜"</span><span class="token punctuation">,</span> attribute1<span class="token operator">=</span><span class="token string">"厚皮"</span><span class="token punctuation">,</span> attribute2<span class="token operator">=</span><span class="token string">"少籽"</span><span class="token punctuation">,</span> attribute3<span class="token operator">=</span><span class="token string">"甜"</span><span class="token punctuation">)</span></code></pre><p><img src="https://i.loli.net/2020/06/05/lRXEdeaLMu47oW8.png" alt="运行结果"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode 29.顺时针打印矩阵</title>
       <link href="/2020/06/05/47753.html"/>
       <url>/2020/06/05/47753.html</url>

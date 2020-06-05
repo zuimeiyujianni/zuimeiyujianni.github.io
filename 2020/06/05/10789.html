@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode 29.顺时针打印矩阵, 海洋之心">
+    <meta name="keywords" content="python语法 不定长参数, 海洋之心">
     <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode 29.顺时针打印矩阵 | 海洋之心</title>
+    <title>python语法 不定长参数 | 海洋之心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode 29.顺时针打印矩阵</h1>
+                    <h1 class="description center-align post-title">python语法 不定长参数</h1>
                 </div>
             </div>
         </div>
@@ -367,8 +367,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/python%E8%AF%AD%E6%B3%95/">
+                                <span class="chip bg-color">python语法</span>
                             </a>
                         
                     </div>
@@ -379,8 +379,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" class="post-category">
-                                基础算法练习
+                            <a href="/categories/python%E8%AF%AD%E6%B3%95/" class="post-category">
+                                python语法
                             </a>
                         
                     </div>
@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    314
+                    116
                 </div>
                 
 
@@ -423,59 +423,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LeetCode-29-顺时针打印矩阵"><a href="#LeetCode-29-顺时针打印矩阵" class="headerlink" title="LeetCode 29.顺时针打印矩阵"></a>LeetCode 29.顺时针打印矩阵</h1><p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。</p>
-<p>示例 1：</p>
-<p>输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]<br>输出：[1,2,3,6,9,8,7,4,5]<br>示例 2：</p>
-<p>输入：matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]<br>输出：[1,2,3,4,8,12,11,10,9,5,6,7]</p>
-<p>限制：</p>
-<p>0 &lt;= matrix.length &lt;= 100<br>0 &lt;= matrix[i].length &lt;= 100</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof" target="_blank" rel="noopener">https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">spiralOrder</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type matrix: List[List[int]]
-        :rtype: List[int]
-        """</span>
-        lenM <span class="token operator">=</span> len<span class="token punctuation">(</span>matrix<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> lenM <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-        lenN <span class="token operator">=</span> len<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> lenN <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-        i <span class="token operator">=</span> <span class="token number">0</span>
-        j <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
-        result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        change <span class="token operator">=</span> <span class="token boolean">True</span>
-
-        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> change <span class="token operator">==</span> <span class="token boolean">False</span><span class="token punctuation">:</span>
-                <span class="token keyword">break</span>
-            change <span class="token operator">=</span> <span class="token boolean">False</span>
-            <span class="token keyword">while</span> j <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> lenN <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                j <span class="token operator">=</span> j <span class="token operator">+</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">while</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> lenM <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">while</span> j <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                j <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">while</span> i <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                i <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-        <span class="token keyword">return</span> result
-</code></pre>
-<p><img src="https://i.loli.net/2020/06/05/Coqw2Sj9ytFAKLH.png" alt="运行结果"></p>
+                <h1 id="python语法-不定长参数"><a href="#python语法-不定长参数" class="headerlink" title="python语法 不定长参数"></a>python语法 不定长参数</h1><h3 id="一、任意数量的参数值"><a href="#一、任意数量的参数值" class="headerlink" title="一、任意数量的参数值"></a>一、任意数量的参数值</h3><p>特点：一个函数只能有一个该参数，且只能放在最右边。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">watermelon</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token operator">*</span>attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> attribute <span class="token keyword">in</span> attributes<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>
+watermelon<span class="token punctuation">(</span><span class="token string">"西瓜"</span><span class="token punctuation">,</span> <span class="token string">"厚皮"</span><span class="token punctuation">,</span> <span class="token string">"少籽"</span><span class="token punctuation">,</span> <span class="token string">"甜"</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://i.loli.net/2020/06/05/IbNR5PsqhfxOXiW.png" alt="运行结果"></p>
+<h3 id="二、任意数量的键值对"><a href="#二、任意数量的键值对" class="headerlink" title="二、任意数量的键值对"></a>二、任意数量的键值对</h3><p>特点：用法和前面的相同，但是传递的键值对。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">watermelon</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token operator">**</span>attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> attribute <span class="token keyword">in</span> attributes<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>
+watermelon<span class="token punctuation">(</span><span class="token string">"西瓜"</span><span class="token punctuation">,</span> attribute1<span class="token operator">=</span><span class="token string">"厚皮"</span><span class="token punctuation">,</span> attribute2<span class="token operator">=</span><span class="token string">"少籽"</span><span class="token punctuation">,</span> attribute3<span class="token operator">=</span><span class="token string">"甜"</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://i.loli.net/2020/06/05/lRXEdeaLMu47oW8.png" alt="运行结果"></p>
 
             </div>
             <hr/>
@@ -501,7 +464,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zuimeiyujianni.github.io/2020/06/05/47753.html">https://zuimeiyujianni.github.io/2020/06/05/47753.html</a>
+                    <a href="https://zuimeiyujianni.github.io/2020/06/05/10789.html">https://zuimeiyujianni.github.io/2020/06/05/10789.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,8 +502,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LeetCode/">
-                                    <span class="chip bg-color">LeetCode</span>
+                                <a href="/tags/python%E8%AF%AD%E6%B3%95/">
+                                    <span class="chip bg-color">python语法</span>
                                 </a>
                             
                         </div>
@@ -708,7 +671,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jun 05 2020 21:25:31 GMT+0800',
+    id: 'Fri Jun 05 2020 22:10:51 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -735,9 +698,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/06/05/10789.html">
                     <div class="card-image">
@@ -758,9 +722,9 @@ def watermelon(name, *attributes):
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -773,6 +737,7 @@ def watermelon(name, *attributes):
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -791,37 +756,35 @@ def watermelon(name, *attributes):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/04/47745.html">
+                <a href="/2020/06/05/47753.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="markdown基础">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode 29.顺时针打印矩阵">
                         
-                        <span class="card-title">markdown基础</span>
+                        <span class="card-title">LeetCode 29.顺时针打印矩阵</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、标题# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题一级标题二级标题三级标题四级标题五级标题六级标题二、字体
-加粗使用两个星号进行左右包围
-斜体使用一个星号进行左右包围
-斜
+                            LeetCode 29.顺时针打印矩阵输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。
+示例 1：
+输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]输出：[1,2,3,6,9,8,7,4,5]示例 2
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            王功胜
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" class="post-category">
+                                    基础算法练习
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -829,8 +792,8 @@ def watermelon(name, *attributes):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/markdown/">
-                        <span class="chip bg-color">markdown</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
