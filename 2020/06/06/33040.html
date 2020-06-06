@@ -399,21 +399,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-06
+                    2020-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    412
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -457,7 +457,141 @@ math<span class="token punctuation">.</span>trunc<span class="token punctuation"
 <pre class=" language-python"><code class="language-python">price <span class="token operator">=</span> <span class="token number">3.28</span>
 math<span class="token punctuation">.</span>ceil<span class="token punctuation">(</span>price<span class="token punctuation">)</span></code></pre>
 <p>&ensp;&ensp;&ensp;&ensp;&ensp;运行结果：4 </p>
-<h2 id="三、random模块"><a href="#三、random模块" class="headerlink" title="三、random模块"></a>三、random模块</h2><h2 id="四、os模块"><a href="#四、os模块" class="headerlink" title="四、os模块"></a>四、os模块</h2><h2 id="五、sys模块"><a href="#五、sys模块" class="headerlink" title="五、sys模块"></a>五、sys模块</h2><h2 id="六、time模块"><a href="#六、time模块" class="headerlink" title="六、time模块"></a>六、time模块</h2>
+<ul>
+<li><p>round(x)进行四舍五入，x是浮点数</p>
+</li>
+<li><p>对元组中的每个数求和<code>math.fsum(元组)</code></p>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> math
+nums <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1.1</span><span class="token punctuation">,</span> <span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">3.3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>fsum<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;运行结果： 6.6<br>&ensp;&ensp;&ensp;&ensp;&ensp;<code>math.fsum()</code>和<code>sum()</code>的区别是：<code>math.fsum()</code>只返回浮点数，<code>sum()</code>根据参数决定返回值类型，如果参数是整数，返回值是整数。如果参数是浮点数，返回值是浮点数。</p>
+<ul>
+<li>求数的绝对值，浮点数使用<code>math.fabs()</code>，整数使用<code>abs()</code> </li>
+</ul>
+<h2 id="三、random模块"><a href="#三、random模块" class="headerlink" title="三、random模块"></a>三、random模块</h2><ul>
+<li><code>random()</code> : 生成一个基于 <strong>[0.0, 1.0)</strong> 之间的浮点数</li>
+<li><code>uniform(a,b)</code>: 在指定的范围获取随机浮点数 N， N在[a, b]范围内</li>
+<li><code>triangular(low, high, mode)</code>:返回三角分布的随机数， low、high是返回值的上下界，mode为中值。low和high的默认值分别为0和1。mode参数默认为两个边界的<strong>中间点</strong>。持续使用该方法，可以得到<strong>以mode为对称点的随机分布数据集</strong>。</li>
+<li><code>betavariate(alpha, beta)</code>: 求Beta分布的随机数，alpha和beta都要大于0，返回值介于0,1之间。</li>
+</ul>
+<p>&ensp;&ensp;&ensp;&ensp;<a href="漫谈三点估算法中关于贝塔分布、三角分布的理解"><strong>补充知识:漫谈三点估算法中关于贝塔分布、三角分布的理解</strong></a></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>triangular<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>triangular<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+nums <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>triangular<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+num1 <span class="token operator">=</span> <span class="token number">0</span>
+num2 <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> x <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> x <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        num1 <span class="token operator">=</span> num1 <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        num2 <span class="token operator">=</span> num2 <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"num1 = %d num2 = %d"</span><span class="token operator">%</span><span class="token punctuation">(</span>num1<span class="token punctuation">,</span>num2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%f%%   %f%%"</span><span class="token operator">%</span><span class="token punctuation">(</span>num1<span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">,</span> num2<span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>betavariate<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="四、os模块"><a href="#四、os模块" class="headerlink" title="四、os模块"></a>四、os模块</h2><ul>
+<li><p>os模块为访问操作系统提供了相关的之处功能，包括Windows,linux,UNIX,Max OS等。</p>
+</li>
+<li><p>os模块的功能包括：</p>
+<ul>
+<li>对文件的相关操作功能</li>
+<li>系统访问Path路径的操作</li>
+<li>Shell命令行操作</li>
+<li>Linux扩展属性操作</li>
+<li>流程管理</li>
+<li>CPU等硬件信息的获取</li>
+<li>基于操作系统的真正的随机数的操作</li>
+<li>相关的一些系统常量的提供</li>
+</ul>
+</li>
+<li><p>os模块常用的函数</p>
+<ul>
+<li><p><code>environ函数</code>：获取操作系统的环境变量</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
+os<span class="token punctuation">.</span>environ</code></pre>
+</li>
+<li><p><code>getcwd函数</code>：获取当前路径对应的字符串</p>
+<pre class=" language-python"><code class="language-python">os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p><code>system(commend)函数</code>:在shell中执行命令（command，是一个命令对应的字符串）</p>
+<pre class=" language-python"><code class="language-python">os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"ping 127.0.0.0"</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p><code>urandom(n)函数</code>:获取适合用于加密的n字节大小的随机数字符串</p>
+<pre class=" language-python"><code class="language-python">os<span class="token punctuation">.</span>urandom<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、sys模块"><a href="#五、sys模块" class="headerlink" title="五、sys模块"></a>五、sys模块</h2><ul>
+<li><p>sys模块提供与python解释器紧密相关的一些变量和函数。</p>
+</li>
+<li><p>常用的函数</p>
+<ul>
+<li><p><code>path</code>&ensp;获取模块文件搜索路径的字符串，或者临时指定新的搜索路径</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path</code></pre>
+<p><img src="https://pic.downk.cc/item/5edbd23fc2a9a83be5afc667.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'d:test'</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5edbd2e1c2a9a83be5b0fe0b.jpg" alt=""></p>
+<p>eg. sys.path是list类型的变量，可以进行暂时的修改，用于临时指定新的搜索路径。</p>
+</li>
+<li><p><code>sys.platform</code>&ensp;操作系统识别符判断函数</p>
+<ul>
+<li><p>Linux -&gt; linux</p>
+</li>
+<li><p>Windows -&gt; win32</p>
+</li>
+<li><p>Windows/Cygwin -&gt; cygwin</p>
+</li>
+<li><p>Mac OS -&gt; darwin<br><img src="https://pic.downk.cc/item/5edbd437c2a9a83be5b42e94.jpg" alt=""></p>
+</li>
+<li><p>函数作用：<strong>根据platform和path实现不同版本的模块文件的导入</strong>。例如在Windows操作系统下导入Windows版本的模块，在Linux操作系统下导入Linux版本的模块。</p>
+<pre class=" language-python"><code class="language-python">  <span class="token keyword">if</span> sys<span class="token punctuation">.</span>platform<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'win32'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'调用Windows版本的模块文件代码'</span><span class="token punctuation">)</span>
+  <span class="token keyword">elif</span> sys<span class="token punctuation">.</span>platform<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'linux'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'调用Linux版本的模块文件代码'</span><span class="token punctuation">)</span></code></pre>
+<p>  <img src="https://pic.downk.cc/item/5edbd619c2a9a83be5b8e1be.jpg" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p><code>sys.getwindowsversion()</code>&ensp;获取当前正在运行的Windows版本信息的元组。<br><img src="https://pic.downk.cc/item/5edbd77cc2a9a83be5bc3179.jpg" alt="">  </p>
+<ul>
+<li>major -&gt; 主要版本号</li>
+<li>minor -&gt; 次要版本号</li>
+<li>build -&gt; 发布的年月</li>
+<li>platform -&gt; 操作系统产品类型，2应该表示用户PC版本，3表示服务器版本。</li>
+<li>service_pack -&gt; 表示一个字符串 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、time模块"><a href="#六、time模块" class="headerlink" title="六、time模块"></a>六、time模块</h2><ul>
+<li><p><code>time.sleep(s)</code>&ensp;程序进程暂停s秒</p>
+</li>
+<li><p><code>time.clock()</code>&ensp;函数把当前的CPU处理器时间用秒为单位的浮点数进行返回。EG.该方法被舍弃，不提倡使用。</p>
+</li>
+<li><p><code>time.strftime(str)</code>&ensp;函数根据时间格式字符串解释当前的时间</p>
+<pre class=" language-python"><code class="language-python">  time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%H hours %M minutes %S seconds'</span><span class="token punctuation">)</span></code></pre>
+<p>  <img src="https://pic.downk.cc/item/5edbdcc7c2a9a83be5c9767a.jpg" alt=""></p>
+</li>
+<li><p><code>time.time()</code>&ensp;函数返回自纪元年起以秒为单位的浮点数时间，就是时间戳  </p>
+<pre class=" language-python"><code class="language-python">  <span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+  <span class="token keyword">import</span> time
+  <span class="token keyword">print</span><span class="token punctuation">(</span>datetime<span class="token punctuation">.</span>timestamp<span class="token punctuation">(</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>  <img src="https://pic.downk.cc/item/5edbda6ac2a9a83be5c3c272.jpg" alt=""></p>
+</li>
+</ul>
+
             </div>
             <hr/>
 
@@ -1026,7 +1160,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.5k</span>&nbsp;字
+                class="white-color">4.5k</span>&nbsp;字
             
             
             
