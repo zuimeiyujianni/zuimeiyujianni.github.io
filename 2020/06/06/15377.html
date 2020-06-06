@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python语法 不定长参数, 海洋之心">
+    <meta name="keywords" content="python语法 类的基本语法, 海洋之心">
     <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python语法 不定长参数 | 海洋之心</title>
+    <title>python语法 类的基本语法 | 海洋之心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python语法 不定长参数</h1>
+                    <h1 class="description center-align post-title">python语法 类的基本语法</h1>
                 </div>
             </div>
         </div>
@@ -392,21 +392,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-05
+                    2020-06-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-05
+                    2020-06-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    116
+                    446
                 </div>
                 
 
@@ -423,22 +423,67 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python语法-不定长参数"><a href="#python语法-不定长参数" class="headerlink" title="python语法 不定长参数"></a>python语法 不定长参数</h1><h3 id="一、任意数量的参数值"><a href="#一、任意数量的参数值" class="headerlink" title="一、任意数量的参数值"></a>一、任意数量的参数值</h3><p>特点：一个函数只能有一个该参数，且只能放在最右边。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">watermelon</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token operator">*</span>attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> attribute <span class="token keyword">in</span> attributes<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>
-watermelon<span class="token punctuation">(</span><span class="token string">"西瓜"</span><span class="token punctuation">,</span> <span class="token string">"厚皮"</span><span class="token punctuation">,</span> <span class="token string">"少籽"</span><span class="token punctuation">,</span> <span class="token string">"甜"</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2020/06/05/IbNR5PsqhfxOXiW.png" alt="运行结果"></p>
-<h3 id="二、任意数量的键值对"><a href="#二、任意数量的键值对" class="headerlink" title="二、任意数量的键值对"></a>二、任意数量的键值对</h3><p>特点：用法和前面的相同，但是传递的键值对。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">watermelon</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token operator">**</span>attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> attribute <span class="token keyword">in</span> attributes<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>
-watermelon<span class="token punctuation">(</span><span class="token string">"西瓜"</span><span class="token punctuation">,</span> attribute1<span class="token operator">=</span><span class="token string">"厚皮"</span><span class="token punctuation">,</span> attribute2<span class="token operator">=</span><span class="token string">"少籽"</span><span class="token punctuation">,</span> attribute3<span class="token operator">=</span><span class="token string">"甜"</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2020/06/05/lRXEdeaLMu47oW8.png" alt="运行结果"></p>
+                <h1 id="python语法-类的基本语法"><a href="#python语法-类的基本语法" class="headerlink" title="python语法 类的基本语法"></a>python语法 类的基本语法</h1><h2 id="一、类的格式"><a href="#一、类的格式" class="headerlink" title="一、类的格式"></a>一、类的格式</h2><ul>
+<li>类的第一行格式  </li>
+<li><em><code>class 类名():</code>*</em></li>
+<li>类文档说明，使用三个单引号</li>
+<li>类函数：或者叫做类方法，这种方法必须依赖类或者实例而存在。</li>
+<li><code>__init__</code> 是类的构造函数，例子如下：  </li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 必须加上self</span>
+    name <span class="token operator">=</span> <span class="token string">"西瓜"</span></code></pre>
+<ul>
+<li><p>self关键字作用：用于传输示例对象，实际上传递的是实例对象在<strong>内存中的一个地址</strong>。调用实例的方法时候，self是<strong>隐形</strong>传递的。</p>
+<p>例子:</p>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">watermelon</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>attributes <span class="token operator">=</span> attributes
+    <span class="token keyword">def</span> <span class="token function">disp</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> attribute <span class="token keyword">in</span> self<span class="token punctuation">.</span>attributes<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>
+
+watermelon <span class="token operator">=</span> watermelon<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'绿色'</span><span class="token punctuation">,</span> <span class="token string">'甜的'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+watermelon<span class="token punctuation">.</span>disp<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>运行结果：<br><img src="https://pic.downk.cc/item/5edb3892c2a9a83be5437326.jpg" alt=""></p>
+<h2 id="二、类的属性和方法"><a href="#二、类的属性和方法" class="headerlink" title="二、类的属性和方法"></a>二、类的属性和方法</h2><ul>
+<li>属性的调用格式：<br><code>实例名.属性名</code></li>
+<li>方法的调用格式：<br><code>实例名.方法名()</code></li>
+</ul>
+<h2 id="三、类的改造（继承、重写方法）"><a href="#三、类的改造（继承、重写方法）" class="headerlink" title="三、类的改造（继承、重写方法）"></a>三、类的改造（继承、重写方法）</h2><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
+<li>继承的格式1：<br><code>class 子类名(父类名)</code></li>
+<li>继承的格式2：<br><code>class 子类名(父类名1, 父类名2, 父类名3)</code></li>
+</ul>
+<p>例子：  </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">watermelon</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>attributes <span class="token operator">=</span> attributes
+    <span class="token keyword">def</span> <span class="token function">disp</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> attribute <span class="token keyword">in</span> attributes<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">bigwatermelon</span><span class="token punctuation">(</span>watermelon<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> attributes<span class="token punctuation">,</span> newattribute<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>newattribute <span class="token operator">=</span> newattribute
+    <span class="token keyword">def</span> <span class="token function">disp</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 重写方法</span>
+        <span class="token keyword">for</span> attribute <span class="token keyword">in</span> self<span class="token punctuation">.</span>attributes<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>newattribute<span class="token punctuation">)</span>
+
+bigwatermelon <span class="token operator">=</span> bigwatermelon<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'绿色'</span><span class="token punctuation">,</span> <span class="token string">'甜的'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'大的'</span><span class="token punctuation">)</span>
+bigwatermelon<span class="token punctuation">.</span>disp<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="重写方法"><a href="#重写方法" class="headerlink" title="重写方法"></a>重写方法</h3><ul>
+<li>要求：子类的方法名称和父类方法名称相同</li>
+</ul>
+<h2 id="四、私有"><a href="#四、私有" class="headerlink" title="四、私有"></a>四、私有</h2><ul>
+<li>让类定义的 <strong>函数</strong> or <strong>变量</strong> 变成 <strong>私有</strong> ，只需要在它的名称前面加上双下划线即可。 </li>
+</ul>
+<h2 id="五、把类放到模块当中"><a href="#五、把类放到模块当中" class="headerlink" title="五、把类放到模块当中"></a>五、把类放到模块当中</h2><ul>
+<li>将类的信息保存到xxx.py文件中。使用下面方法导入该xxx.py文件中的所有类：<br><code>from  xxx import *   # 从xxx模块中导入所有类</code><br><code>import xxx as yyy   # 导入xxx模块并简称为yyy</code><br><code>from xxx import clazz   # 从xxx模块中导入clazz这个类</code></li>
+</ul>
 
             </div>
             <hr/>
@@ -464,7 +509,7 @@ watermelon<span class="token punctuation">(</span><span class="token string">"�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zuimeiyujianni.github.io/2020/06/05/10789.html">https://zuimeiyujianni.github.io/2020/06/05/10789.html</a>
+                    <a href="https://zuimeiyujianni.github.io/2020/06/06/15377.html">https://zuimeiyujianni.github.io/2020/06/06/15377.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -671,7 +716,7 @@ watermelon<span class="token punctuation">(</span><span class="token string">"�
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jun 05 2020 22:10:51 GMT+0800',
+    id: 'Sat Jun 06 2020 13:49:57 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -698,49 +743,55 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/06/06/31522.html">
+                <a href="/2020/06/06/15377.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="LeetCode 128 最长连续序列">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python语法 类的基本语法">
                         
-                        <span class="card-title">LeetCode 128 最长连续序列</span>
+                        <span class="card-title">python语法 类的基本语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode 128 最长连续序列给定一个未排序的整数数组，找出最长连续序列的长度。
-要求算法的时间复杂度为 O(n)。
-示例:
-输入: [100, 4, 200, 1, 3, 2]输出: 4解释: 最长连续序列是 [1, 2, 3, 
+                            python语法 类的基本语法一、类的格式
+类的第一行格式  
+class 类名():*
+类文档说明，使用三个单引号
+类函数：或者叫做类方法，这种方法必须依赖类或者实例而存在。
+__init__ 是类的构造函数，例子如下：  
+
+def _
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" class="post-category">
-                                    基础算法练习
+                            <a href="/categories/python%E8%AF%AD%E6%B3%95/" class="post-category">
+                                    python语法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/python%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">python语法</span>
                     </a>
                     
                 </div>
@@ -754,33 +805,35 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/05/47753.html">
+                <a href="/2020/06/06/34114.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode 29.顺时针打印矩阵">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="python语法 匿名函数">
                         
-                        <span class="card-title">LeetCode 29.顺时针打印矩阵</span>
+                        <span class="card-title">python语法 匿名函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode 29.顺时针打印矩阵输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。
-示例 1：
-输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]输出：[1,2,3,6,9,8,7,4,5]示例 2
+                            匿名函数匿名函数特点
+匿名函数的格式lambda [para1, para2, ...]: expression
+labmbda函数没有函数名称
+函数的参数是可选的，可以是任意类型的
+expression实现匿名函数的功能，并返回结果，具有
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" class="post-category">
-                                    基础算法练习
+                            <a href="/categories/python%E8%AF%AD%E6%B3%95/" class="post-category">
+                                    python语法
                                 </a>
                             
                             
@@ -790,8 +843,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/python%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">python语法</span>
                     </a>
                     
                 </div>
