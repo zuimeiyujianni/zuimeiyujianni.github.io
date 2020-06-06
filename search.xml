@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python语法 匿名函数</title>
+      <link href="/2020/06/06/34114.html"/>
+      <url>/2020/06/06/34114.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><h2 id="匿名函数特点"><a href="#匿名函数特点" class="headerlink" title="匿名函数特点"></a>匿名函数特点</h2><ul><li>匿名函数的格式<br><code>lambda [para1, para2, ...]: expression</code></li><li>labmbda函数没有函数名称</li><li>函数的参数是可选的，可以是任意类型的</li><li>expression实现匿名函数的功能，并返回结果，具有return的功能</li><li>整个匿名函数在一行内实现所有功能</li></ul><pre class=" language-python"><code class="language-python">sum <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token operator">*</span>xnums <span class="token operator">=</span> <span class="token punctuation">[</span>sum<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token keyword">print</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span></code></pre><p>运行结果：<br><strong>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</strong></p><h2 id="匿名函数高级使用方法：把匿名函数作为一个函数参数"><a href="#匿名函数高级使用方法：把匿名函数作为一个函数参数" class="headerlink" title="匿名函数高级使用方法：把匿名函数作为一个函数参数"></a>匿名函数高级使用方法：把匿名函数作为一个函数参数</h2><p><strong>优点</strong>  </p><ul><li>在调用函数的时候，可以随时修改lambda函数的逻辑表达式来改变函数的逻辑</li></ul><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sum</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">:</span>    nums <span class="token operator">=</span> <span class="token punctuation">[</span>method<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>    <span class="token keyword">return</span> nums<span class="token keyword">print</span><span class="token punctuation">(</span>sum<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token keyword">lambda</span> x <span class="token punctuation">:</span> x <span class="token operator">*</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>sum<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token keyword">lambda</span> x <span class="token punctuation">:</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><h2 id="匿名函数高级使用方法：-动态传入匿名函数"><a href="#匿名函数高级使用方法：-动态传入匿名函数" class="headerlink" title="匿名函数高级使用方法： 动态传入匿名函数"></a>匿名函数高级使用方法： 动态传入匿名函数</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sum</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">:</span>    nums <span class="token operator">=</span> <span class="token punctuation">[</span>method<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>    <span class="token keyword">return</span> numss <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入匿名函数表达式："</span><span class="token punctuation">)</span>method <span class="token operator">=</span> eval<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>sum<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><p>运行结果：<br><img src="https://pic.downk.cc/item/5edb2ca4c2a9a83be5222d92.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python语法 函数和变量作用域</title>
       <link href="/2020/06/06/10740.html"/>
       <url>/2020/06/06/10740.html</url>
