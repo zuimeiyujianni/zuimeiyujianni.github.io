@@ -403,14 +403,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-08
+                    2020-06-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    17
+                    382
                 </div>
                 
 
@@ -428,9 +428,38 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Linux常用的命令"><a href="#Linux常用的命令" class="headerlink" title="Linux常用的命令"></a>Linux常用的命令</h1><ul>
-<li>命令的格式 <code>命令 [-选项] [参数]</code></li>
+<li>命令的格式 <code>命令 [-选项] [参数]</code>，例如：<code>ls -la /etc</code><ul>
+<li>个别命令不遵守该格式</li>
+<li>有多个选项的时候，可以写在一起</li>
+<li>简化选项和完整选项，例如 -a 等于 –all</li>
 </ul>
-
+</li>
+</ul>
+<h3 id="目录处理命令-ls"><a href="#目录处理命令-ls" class="headerlink" title="目录处理命令 ls"></a>目录处理命令 <code>ls</code></h3><ul>
+<li><p>语法： <code>ls 选项[-ald] [文件或者目录]</code></p>
+</li>
+<li><p><code>-a</code>&ensp;显示隐藏文件（以.开头的文件）</p>
+</li>
+<li><p><code>-l</code>&ensp;文件的长格式显示。  </p>
+<p>  <img src="https://pic.downk.cc/item/5ede5fecc2a9a83be5441b44.jpg" alt="">  </p>
+<p>  标出的部分：<strong>在Linux系统当中，每一个文件把用户分成三类：所有者，所有组，其他人</strong> 。所有者或者所有组只能有 <strong>一个</strong>。</p>
+</li>
+<li><p>上面文件的长格式显示文件大小使用的是字节，可以使用命令<code>ls -lh</code>使用kB方式显示文件的大小。</p>
+</li>
+<li><p>文件没有创建时间，只有最后修改时间。</p>
+</li>
+<li><p><code>-rw-r--r--</code>:</p>
+<ul>
+<li>第一个位置表示 <strong>文件类型</strong>，<code>-</code>表示二进制文件，<code>d</code>表示目录文件，<code>l</code>表示软连接文件。</li>
+<li>剩下的九个位置分成三个部分：<code>rw-</code> , <code>r--</code> , <code>r--</code>。表示三类用户的权限（u所有者， g所属组， o其他人），r表示读取，w表示写入，x表示执行。<code>-</code>表示没有权限。</li>
+</ul>
+</li>
+<li><p><code>-ld</code>&ensp;表示只显示目录本身的信息，例如<code>ls -ld /etc</code>则只显示<code>/etc</code>这个目录文件的信息，不会显示该目录下文件的信息。</p>
+</li>
+<li><p><code>ls -i</code>&ensp;查看索引节点的编号，该编号唯一标记该节点。</p>
+</li>
+</ul>
+<h3 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h3><h3 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h3><h3 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h3>
             </div>
             <hr/>
 
@@ -693,55 +722,73 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/08/19568.html">
+                <a href="/2020/06/09/7268.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Linux 常用命令">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="考研复试经验">
                         
-                        <span class="card-title">Linux 常用命令</span>
+                        <span class="card-title">考研复试经验</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Linux常用的命令
-命令的格式 命令 [-选项] [参数]
+                            一、我的考研概况
 
 
+初试成绩
+政治
+英语一
+数学一
+专业课845
+初试排名(专硕)
+复试成绩
+总成绩
+总排名
+
+
+
+328
+64
+74
+86
+104
+65/84
+167
+495
+50/70
+
+
+
+专业课成绩在本次考研中我感觉成绩还可以，所
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E8%80%83%E7%A0%94/" class="post-category">
+                                    考研
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%85%84%E5%BC%9F%E8%BF%9ELinux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">兄弟连Linux课程笔记</span>
+                    <a href="/tags/%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">考研</span>
                     </a>
                     
                 </div>
@@ -1003,7 +1050,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.2k</span>&nbsp;字
+                class="white-color">10.6k</span>&nbsp;字
             
             
             
