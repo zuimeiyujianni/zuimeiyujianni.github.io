@@ -8,7 +8,7 @@
       <link href="/2020/06/08/19568.html"/>
       <url>/2020/06/08/19568.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="Linux常用的命令"><a href="#Linux常用的命令" class="headerlink" title="Linux常用的命令"></a>Linux常用的命令</h1><ul><li>命令的格式 <code>命令 [-选项] [参数]</code></li></ul>]]></content>
       
       
       <categories>
@@ -47,7 +47,9 @@
       
         <tags>
             
-            <tag> Linux, 兄弟连Linux课程笔记 </tag>
+            <tag> Linux </tag>
+            
+            <tag> 兄弟连Linux课程笔记 </tag>
             
         </tags>
       
