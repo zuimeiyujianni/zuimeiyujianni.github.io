@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    301
                 </div>
                 
 
@@ -423,7 +423,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="python语法-模块"><a href="#python语法-模块" class="headerlink" title="python语法 模块"></a>python语法 模块</h1><p>python的模块分为<strong>标准库模块</strong>和<strong>自定义模块</strong>，<strong>自定义模块</strong>分为以下几类：</p>
+<ul>
+<li><strong>函数模块文件</strong>：&ensp;存放自定义函数模块的代码文件，主要供主程序调用使用  </li>
+<li><strong>类模块文件</strong>：&ensp;存放自定义类模块的代码文件，主要用于主函数调用</li>
+<li><strong>主程序模块</strong>：&ensp;直接被编译器调用并首先执行的代码文件</li>
+</ul>
+<p>导入一个非搜索路径下的模块文件：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> r<span class="token string">'d:'</span> <span class="token comment" spellcheck="true"># 在非搜索路径下，必须指定文件的绝对路径</span>
+<span class="token keyword">import</span> Solution     <span class="token comment" spellcheck="true"># 导入绝对路径下的Solution模块文件</span>
+help<span class="token punctuation">(</span>Solution<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true"># 使用help函数读取模块文件的相关描述信息</span></code></pre>
+<p>运行结果：<br><img src="https://pic.downk.cc/item/5edda146c2a9a83be5d18b2b.jpg" alt=""></p>
+<p><strong>可以考虑建立子文件夹把模块文件分类保存</strong></p>
+<ul>
+<li>建立定义包目录，如package1，然后在该文件夹下存放一个<code>__init__.py</code>的空文件，用于说明该文件夹是一个包。</li>
+<li>可以把模块文件分类放到包下面，也可以在顶级目录下面存放模块文件</li>
+<li>导入格式&ensp;<code>import 包名.模块名称.函数or类名称</code></li>
+</ul>
+
             </div>
             <hr/>
 
@@ -699,7 +717,10 @@ gitment.render('gitment-content');
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            python语法 模块python的模块分为标准库模块和自定义模块，自定义模块分为以下几类：
+
+函数模块文件：&ensp;存放自定义函数模块的代码文件，主要供主程序调用使用  
+类模块文件：&ensp;存放自定义类模块的代码文件，主要用于主
                         
                     </div>
                     <div class="publish-info">
@@ -981,7 +1002,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5k</span>&nbsp;字
+                class="white-color">5.3k</span>&nbsp;字
             
             
             
