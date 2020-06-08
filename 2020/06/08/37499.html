@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode 990 等式方程的可满足性, 海洋之心">
+    <meta name="keywords" content="Linux 注意事项, 海洋之心">
     <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode 990 等式方程的可满足性 | 海洋之心</title>
+    <title>Linux 注意事项 | 海洋之心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode 990 等式方程的可满足性</h1>
+                    <h1 class="description center-align post-title">Linux 注意事项</h1>
                 </div>
             </div>
         </div>
@@ -367,8 +367,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/Linux%E3%80%81%E5%85%84%E5%BC%9F%E8%BF%9ELinux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Linux、兄弟连Linux课程笔记</span>
                             </a>
                         
                     </div>
@@ -379,8 +379,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" class="post-category">
-                                基础算法练习
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
                             </a>
                         
                     </div>
@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    524
+                    673
                 </div>
                 
 
@@ -423,72 +423,37 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LeetCode-990-等式方程的可满足性"><a href="#LeetCode-990-等式方程的可满足性" class="headerlink" title="LeetCode 990 等式方程的可满足性"></a>LeetCode 990 等式方程的可满足性</h1><p>给定一个由表示变量之间关系的字符串方程组成的数组，每个字符串方程 <code>equations[i]</code> 的长度为 4，并采用两种不同的形式之一：<code>&quot;a==b&quot;</code> 或 <code>&quot;a!=b&quot;</code>。在这里，a 和 b 是小写字母（不一定不同），表示单字母变量名。只有当可以将整数分配给变量名，以便满足所有给定的方程时才返回 true，否则返回 false。 </p>
-<p>示例 1：</p>
-<p>输入：<code>[&quot;a==b&quot;,&quot;b!=a&quot;]</code><br>输出：<code>false</code> </p>
-<p>解释：如果我们指定，a = 1 且 b = 1，那么可以满足第一个方程，但无法满足第二个方程。没有办法分配变量同时满足这两个方程。  </p>
-<p>示例 2：</p>
-<p>输出：<code>[&quot;b==a&quot;,&quot;a==b&quot;]</code><br>输入：<code>true</code> </p>
-<p>解释：我们可以指定 a = 1 且 b = 1 以满足满足这两个方程。  </p>
-<p>示例 3：</p>
-<p>输入：<code>[&quot;a==b&quot;,&quot;b==c&quot;,&quot;a==c&quot;]</code><br>输出：<code>true</code></p>
-<p>示例 4：</p>
-<p>输入：<code>[&quot;a==b&quot;,&quot;b!=c&quot;,&quot;c==a&quot;]</code><br>输出：<code>false</code>  </p>
-<p>示例 5：</p>
-<p>输入：<code>[&quot;c==c&quot;,&quot;b==d&quot;,&quot;x!=z&quot;]</code><br>输出：<code>true</code></p>
-<p>提示：</p>
+                <h1 id="Linux-注意事项"><a href="#Linux-注意事项" class="headerlink" title="Linux 注意事项"></a>Linux 注意事项</h1><ul>
+<li><p>Linux严格区分大小写</p>
+</li>
+<li><p>Linux所有内容都是以 <strong><code>文件</code></strong> 的形式保存，包括硬件</p>
 <ul>
-<li>1 &lt;= equations.length &lt;= 500</li>
-<li>equations[i].length == 4</li>
-<li>equations[i][0] 和 equations[i][3] 是小写字母</li>
-<li>equations[i][1] 要么是 ‘=’，要么是 ‘!’</li>
-<li>equations[i][2] 是 ‘=’</li>
+<li>Windows使用设备管理器管理硬件，Linux使用文件管理硬件 </li>
+<li>对配置的修改需要写入到文件当中才可以永久生效，否则只能临时生效</li>
+<li>硬盘文件是 <code>/dev/sd[a-p]</code></li>
+<li>光盘文件是<code>/dev/sr0</code>等</li>
 </ul>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/satisfiability-of-equality-equations" target="_blank" rel="noopener">https://leetcode-cn.com/problems/satisfiability-of-equality-equations</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-<p>思路： <strong>并查集</strong>、<strong>路径压缩</strong>，注意先处理合并内容。  </p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">equationsPossible</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> equations<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">'''
-        :type equations: List[str]
-        :rtype: bool
-        '''</span>
-        pre <span class="token operator">=</span> <span class="token punctuation">{</span>chr<span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">:</span>chr<span class="token punctuation">(</span>ch<span class="token punctuation">)</span> <span class="token keyword">for</span> ch <span class="token keyword">in</span> range<span class="token punctuation">(</span>ord<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ord<span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-        <span class="token keyword">for</span> equation <span class="token keyword">in</span> equations<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> equation<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'='</span><span class="token punctuation">:</span>
-                self<span class="token punctuation">.</span>union<span class="token punctuation">(</span>pre<span class="token punctuation">,</span> equation<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> equation<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-        <span class="token keyword">for</span> equation <span class="token keyword">in</span> equations<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> equation<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'!'</span><span class="token punctuation">:</span>
-                x <span class="token operator">=</span> self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>pre<span class="token punctuation">,</span> equation<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                y <span class="token operator">=</span> self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>pre<span class="token punctuation">,</span> equation<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                <span class="token keyword">if</span> x <span class="token operator">==</span> y<span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token boolean">False</span>
-
-        <span class="token keyword">return</span> <span class="token boolean">True</span>
-
-
-    <span class="token keyword">def</span> <span class="token function">union</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pre<span class="token punctuation">,</span> root1<span class="token punctuation">,</span> root2<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">'''
-        并查集合并
-        '''</span>
-        x <span class="token operator">=</span> self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>pre<span class="token punctuation">,</span> root1<span class="token punctuation">)</span>
-        y <span class="token operator">=</span> self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>pre<span class="token punctuation">,</span> root2<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> x <span class="token operator">!=</span> y<span class="token punctuation">:</span>
-            pre<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> x
-
-    <span class="token keyword">def</span> <span class="token function">find</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pre<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">'''
-        并查集查找
-        '''</span>
-        x <span class="token operator">=</span> root
-        <span class="token keyword">while</span> pre<span class="token punctuation">[</span>root<span class="token punctuation">]</span> <span class="token operator">!=</span> root<span class="token punctuation">:</span>
-            root <span class="token operator">=</span> pre<span class="token punctuation">[</span>root<span class="token punctuation">]</span>
-
-        <span class="token keyword">while</span> pre<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> root<span class="token punctuation">:</span>
-            temp <span class="token operator">=</span> pre<span class="token punctuation">[</span>x<span class="token punctuation">]</span>
-            pre<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> root
-            x <span class="token operator">=</span> temp
-        <span class="token keyword">return</span> root</code></pre>
+</li>
+<li><p><strong><code>Linux文件不靠扩展名识别文件</code></strong>，Windows使用扩展名判断文件类型，例如.exe表示可执行文件。Linux不使用扩展名识别文件，它使用 <strong><code>文件的权限</code></strong> 来指定。Linux有些文件使用了扩展名是为了使用方便系统的管理员（Linux）识别文件，对于Linux而言，不使用这些扩展名依然可以识别文件的类型。</p>
+<ul>
+<li>压缩包：&ensp;.gz&ensp;.bz2&ensp;.tar.bz2&ensp;.tgz</li>
+<li>二进制软件包：&ensp;.rpm</li>
+<li>脚本文件：&ensp;.sh</li>
+<li>配置文件：&ensp;.conf</li>
+<li>网页文件：&ensp;.html&ensp;.php</li>
+</ul>
+</li>
+<li><p>Linux的所有的存储设备都必须 <strong><code>挂载（mount）</code></strong> 之后用户才可以使用，包括硬件、U盘、光盘。</p>
+<blockquote>
+<p><font color="purple">在Unix系统中，所有可访问的文件都是被组织在一个文件树中，即文件层次结构（file hierarchy），其根为 /。mount命令用于把在某些设备上的文件系统附加到大文件树，这样的话，系统才可以访问这些设备上的文件。Unix操作系统只有一个单一的目录树结构，该目录树的最顶层就是 / ， 所有可访问文件都必须与这个目录树结构关联。这一点和Windows操作系统不同，在Windows中，每一个硬盘都有独立的目录树结构，比如D:\workspace\algorithm ，C:\Users 这样的。挂载（mount）这一动作就是把某个设备与目录树中的某个特定位置进行关联，以便于操作系统能够从根目录开始找到这个刚刚加入的设备，从而访问该设备的内的文件数据。（需要注意的是，这里的设备是泛指，既可以指usb、CD-ROM这样真实的设备，也可以是操作系统中的某个目录）。比如，当系统启动的时候，一个特殊的存储设备（通常被称为root 分区）就会与目录树的根进行关联，换句话说，把root分区挂载到了/ 上。</font>  </p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/kkbill/p/11979082.html" target="_blank" rel="noopener">关于挂载的详细信息文章链接</a></p>
+</li>
+<li><p>Linux服务器一般不会使用图形化界面的，因为对于存储设备，需要我们的手动 <strong><code>挂载</code></strong>。</p>
+</li>
+<li><p>Windows下的程序不能直接在Linux中安装和运行。</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -514,7 +479,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zuimeiyujianni.github.io/2020/06/08/15733.html">https://zuimeiyujianni.github.io/2020/06/08/15733.html</a>
+                    <a href="https://zuimeiyujianni.github.io/2020/06/08/37499.html">https://zuimeiyujianni.github.io/2020/06/08/37499.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,8 +517,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LeetCode/">
-                                    <span class="chip bg-color">LeetCode</span>
+                                <a href="/tags/Linux%E3%80%81%E5%85%84%E5%BC%9F%E8%BF%9ELinux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Linux、兄弟连Linux课程笔记</span>
                                 </a>
                             
                         </div>
@@ -721,7 +686,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Mon Jun 08 2020 11:39:46 GMT+0800',
+    id: 'Mon Jun 08 2020 16:48:05 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -752,26 +717,19 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/08/37499.html">
+                <a href="/2020/06/08/4975.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux 注意事项">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Linux 服务器的维护和管理建议">
                         
-                        <span class="card-title">Linux 注意事项</span>
+                        <span class="card-title">Linux 服务器的维护和管理建议</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Linux 注意事项
-Linux严格区分大小写
-
-Linux所有内容都是以 文件 的形式保存，包括硬件
-
-Windows使用设备管理器管理硬件，Linux使用文件管理硬件 
-对配置的修改需要写入到文件当中才可以永久生效，否则只能临时生效
-硬
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -780,23 +738,11 @@ Windows使用设备管理器管理硬件，Linux使用文件管理硬件
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            王功胜
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux%E3%80%81%E5%85%84%E5%BC%9F%E8%BF%9ELinux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Linux、兄弟连Linux课程笔记</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -808,24 +754,19 @@ Windows使用设备管理器管理硬件，Linux使用文件管理硬件
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/08/22133.html">
+                <a href="/2020/06/08/15733.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="python语法 异常">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="LeetCode 990 等式方程的可满足性">
                         
-                        <span class="card-title">python语法 异常</span>
+                        <span class="card-title">LeetCode 990 等式方程的可满足性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python语法 异常一、程序中的问题
-代码语法错误
-代码存在的隐形错误
-软件面对不确定性的异常错误。软件代码本身没有什么问题，问题来自运行过程中环境带来的不确定性异常。
-软件尝试打开一个文件，但是文件已经被占用或者损毁。
-软件插入数据的过
+                            LeetCode 990 等式方程的可满足性给定一个由表示变量之间关系的字符串方程组成的数组，每个字符串方程 equations[i] 的长度为 4，并采用两种不同的形式之一：&quot;a==b&quot; 或 &quot;a!=b&qu
                         
                     </div>
                     <div class="publish-info">
@@ -836,8 +777,8 @@ Windows使用设备管理器管理硬件，Linux使用文件管理硬件
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python%E8%AF%AD%E6%B3%95/" class="post-category">
-                                    python语法
+                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" class="post-category">
+                                    基础算法练习
                                 </a>
                             
                             
@@ -847,8 +788,8 @@ Windows使用设备管理器管理硬件，Linux使用文件管理硬件
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">python语法</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
