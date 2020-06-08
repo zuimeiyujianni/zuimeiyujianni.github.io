@@ -365,12 +365,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux%E3%80%81%E5%85%84%E5%BC%9F%E8%BF%9ELinux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Linux、兄弟连Linux课程笔记</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -393,14 +406,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -410,7 +423,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="Linux-服务器的维护和管理建议"><a href="#Linux-服务器的维护和管理建议" class="headerlink" title="Linux 服务器的维护和管理建议"></a>Linux 服务器的维护和管理建议</h1><h2 id="一、Linux各个目录的用作"><a href="#一、Linux各个目录的用作" class="headerlink" title="一、Linux各个目录的用作"></a>一、Linux各个目录的用作</h2><ul>
+<li><code>/bin/</code>&ensp;存放系统命令的目录， <strong><code>普通用户</code></strong> 和 <strong><code>超级用户</code></strong> 都可以执行。放在 <strong><code>/bin</code></strong> 目录下的命令可以在 <strong>单用户模式</strong>下执行。</li>
+<li><code>/sbin/</code>&ensp;保存和系统环境设置相关的命令，只有 <strong><code>超级用户</code></strong> 可以使用这些命令进行系统环境设置，有些命令允许普通用户进行查看。</li>
+<li><code>/usr/bin/</code>&ensp;存放系统命令的目录，<strong>普通用户</strong> 和 <strong>超级用户</strong> 都可以执行。这些命令和系统启动无关，在单用户模式下无法执行。</li>
+<li><code>/usr/sbin/</code>&ensp;存在于根系统 <strong>不必要的系统管理命令</strong> 。只有超级用户可以使用。</li>
+<li><code>/boot/</code>&ensp;系统启动目录，保存和 <strong><code>系统启动相关的文件</code></strong> ，例如内核文件和启动引导程序文件等。eg.这个目录大小只有200M，因为为了让系统能够正常的启动，不要在该目录下面放其他的文件。</li>
+<li><code>/dev/</code>&ensp; <strong><code>设备文件</code></strong> 保存位置。Linux所以的内容都是以文件的形式进行保存，包括硬件。这个目录就是用来保存所有的硬件设备文件的。</li>
+<li><code>/etc/</code>&ensp; <strong><code>配置文件</code></strong> 保存的位置。系统中所有采用默认的安装方式(npm安装)的配置文件全部保存在该目录下面。例如用户的账号和密码，服务的启动的脚本，常用的服务配置文件等等。 </li>
+<li><code>/home/</code>&ensp;普通用户的家目录。建立每个用户的时候，每个用户都有一个默认的登陆位置，这个位置就是用户的家目录，所有的普通的用户都在 <code>/home/</code>目录下建立一个和用户名相同的目录。例如用户wanggongsheng的家目录是<code>/home/wanggongsheng</code></li>
+<li><code>/lib/</code>&ensp;<strong>系统调用的函数库</strong> 保存的位置。 </li>
+<li><code>/lost+found/</code>&ensp;这个目录不仅存放在根目录下，在每一个分区下都有这样的一个目录，例如<code>/boot</code>目录。当系统系统意外崩溃或者意外的关机，产生的一些 <strong>文件碎片</strong> 放在这里。当 <strong>系统启动的过程中，fsck工具会检查这里，修改已经损坏的文件系统</strong> 。这个目录只在每个分区中出现，例如<code>/lost+found</code>就是根目录的备份恢复目录，<code>/boot/lost+found</code>就是<code>/boot</code>分区的备份恢复目录。</li>
+<li><code>/media/</code>&ensp;<strong><code>挂载目录</code></strong>。系统建议是挂载 <strong>媒体设备</strong>，例如 <strong>软盘</strong> 和 <strong>光盘</strong> 。</li>
+<li><code>/mnt/</code>&ensp;<strong><code>挂载目录</code></strong>。早期的Linux只要一个挂载目录，没有细分。该目录建议 <strong>挂载额外的设备</strong> ，如 <strong>U盘</strong> ，<strong>移动硬盘</strong> 和 <strong>其他操作系统的分区</strong> 。</li>
+<li><code>/mist/</code>&ensp;<strong><code>挂载目录</code></strong>。系统建议挂载NFS服务的共享目录。</li>
+<li>虽然系统准备了三个默认的挂载目录，但是到底在什么目录挂载什么设备由管理员进行决定。</li>
+<li><code>/opt/</code>&ensp;第三方安装软件的保存位置。这个目录就是放置和安装其他软件的，手工安装的源码包都可以安装到这个目录下。不过把软件安装到<code>/usr/local/</code>&ensp;目录当中也非常好（Linux行业默认的行为）。</li>
+<li><code>/proc/</code>&ensp;虚拟文件系统，该目录中的数据并不是保存到磁盘当中，而是 <strong>保存到内存</strong> 当中。主要保存系统的 <strong>内核</strong> ，<strong>进程</strong>，<strong>外部设备状态</strong> 和 <strong>网络状态</strong> 等。</li>
+<li><code>/sys/</code>&ensp;虚拟文件系统。和<code>/proc/</code>目录相似，都是保存在内存当中的，主要保存和内核相关的信息。</li>
+<li><code>/root/</code>&ensp; <strong><code>超级用户的家目录</code></strong> 。普通用户的家目录在<code>/home/</code>下。超级用户的家目录直接在<code>/</code>下面。</li>
+<li><code>/srv/</code>&ensp;服务数据目录。一些服务启动了之后，可以在这个目录保存所需要的数据。</li>
+<li><code>/tmp/</code>&ensp;临时目录。<strong>系统存放临时文件</strong> 的目录，该目录下的文件所有的用户都可以访问。此目录不能保存重要的文件，最好每次开机都把该目录清空。</li>
+<li><code>/usr/</code>&ensp;系统资源目录。这里usr不是user简写，而是Unix Softwre Resource缩写。不是用于存放用户的数据，而是放系统的软件资源。系统中大多数安装的软件资源都保存在这里。</li>
+<li><code>/var/</code>&ensp;动态数据保存的位置。主要保存缓存，日志以及软件运行所产生的文件。</li>
+</ul>
+<h2 id="二、服务器的注意事项"><a href="#二、服务器的注意事项" class="headerlink" title="二、服务器的注意事项"></a>二、服务器的注意事项</h2><ul>
+<li><strong>远程服务器不允许关机，只能重启</strong></li>
+<li>重启的时候应该 <strong>关闭服务</strong></li>
+<li>不要在服务器访问高峰运行高负载指令</li>
+<li>远程配置 <strong>防火墙</strong> 时不要把自己提出防火墙。<blockquote>
+<p><font color="purple">防火墙相当于一个过滤器，通过IP地址，端口地址，包中数据判断该数据能不能通过防火墙。防火墙不能取代杀毒软件。）</font></p>
+</blockquote>
+</li>
+<li>指定合理的密码规范并定时更新</li>
+<li>合理分配权限（权限越小越好）</li>
+<li>定期备份重要数据和日志</li>
+</ul>
+
             </div>
             <hr/>
 
@@ -472,7 +521,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Linux%E3%80%81%E5%85%84%E5%BC%9F%E8%BF%9ELinux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Linux、兄弟连Linux课程笔记</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -682,7 +735,9 @@ gitment.render('gitment-content');
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Linux 服务器的维护和管理建议一、Linux各个目录的用作
+/bin/&ensp;存放系统命令的目录， 普通用户 和 超级用户 都可以执行。放在 /bin 目录下的命令可以在 单用户模式下执行。
+/sbin/&ensp;保存和系统环境设
                         
                     </div>
                     <div class="publish-info">
@@ -691,13 +746,25 @@ gitment.render('gitment-content');
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            王功胜
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux%E3%80%81%E5%85%84%E5%BC%9F%E8%BF%9ELinux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Linux、兄弟连Linux课程笔记</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -957,7 +1024,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.9k</span>&nbsp;字
+                class="white-color">8.2k</span>&nbsp;字
             
             
             
