@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="机器学习 分类, 海洋之心">
+    <meta name="keywords" content="机器学习 Logistic Regression, 海洋之心">
     <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>机器学习 分类 | 海洋之心</title>
+    <title>机器学习 Logistic Regression | 海洋之心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">机器学习 分类</h1>
+                    <h1 class="description center-align post-title">机器学习 Logistic Regression</h1>
                 </div>
             </div>
         </div>
@@ -407,21 +407,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-09
+                    2020-06-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    93
+                    885
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -431,14 +431,52 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="机器学习-Logistic-Regression"><a href="#机器学习-Logistic-Regression" class="headerlink" title="机器学习 Logistic Regression"></a>机器学习 Logistic Regression</h1><p>Logistic Regression是目前最流行使用最广泛的一种学习算法。常见的分类任务：</p>
+                <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h1 id="机器学习-Logistic-Regression"><a href="#机器学习-Logistic-Regression" class="headerlink" title="机器学习 Logistic Regression"></a>机器学习 Logistic Regression</h1><p>Logistic Regression是目前最流行使用最广泛的一种学习算法。常见的分类任务：</p>
 <ul>
 <li>Email: Spam / Not Spam ?</li>
 <li>Online Transcations: Fraudulent(YES / NO) ?</li>
 <li>Tumor: Malignant / Benign</li>
 </ul>
-<p>分类问题包括二元的分类问题和多元分类问题，先研究二元分类问题：  </p>
-<p>dependent variable可能属于两个类别，negative class 和 positive class 。即  $y \in {0, 1}$  </p>
+<h2 id="6-1-分类问题"><a href="#6-1-分类问题" class="headerlink" title="6.1 分类问题"></a>6.1 分类问题</h2><p>&ensp;&ensp;&ensp;&ensp;分类问题包括二元的分类问题和多元分类问题，先研究二元分类问题：  </p>
+<p>&ensp;&ensp;&ensp;&ensp;dependent variable可能属于两个类别，negative class 和 positive class 。即 \( y \in \{0, 1\} \) 。其中 0 表示负向类(negative class)， 1 表示正向类(positive class)。  </p>
+<p><img src="https://pic.downk.cc/item/5edf4deec2a9a83be5ce93d8.jpg" alt=""></p>
+<p>&ensp;&ensp;&ensp;&ensp;当我们使用 <strong><code>线性回归</code></strong> 的时候，我们 <strong><code>假设函数</code></strong> 的输出值可能大于1，也可能远远小于0，即使我们使用的 <strong><code>训练样本</code></strong> 的 <strong><code>标签y</code></strong> 都等于 0 or 1。 <strong>假设函数</strong> 得到的值远大于1 or 远小于0会让人感觉奇怪。</p>
+<p>&ensp;&ensp;&ensp;&ensp;引入 <strong><code>逻辑回归算法</code></strong> ，这个算法的性质是： 它的输出值永远在 0 到 1 之间。</p>
+<p>&ensp;&ensp;&ensp;&ensp;eg. <strong>逻辑回归算法</strong> 是分类算法，它适合用于标签值 <strong>离散</strong> 的状况。</p>
+<h2 id="6-2-假说表示（Hypothesis-Representation）"><a href="#6-2-假说表示（Hypothesis-Representation）" class="headerlink" title="6.2 假说表示（Hypothesis Representation）"></a>6.2 假说表示（Hypothesis Representation）</h2><p>&ensp;&ensp;&ensp;&ensp;我们希望得到一个函数，这个函数的预测值要在0到1之间。之前使用<strong>线性回归</strong>求出适合数据的一条直线。</p>
+<p><img src="https://pic.downk.cc/item/5edf51d9c2a9a83be5d4bac7.jpg" alt=""></p>
+<p>&ensp;&ensp;&ensp;&ensp;如果使用<strong>线性回归</strong>，我们只能预测<strong>连续的值</strong>，而这个分类问题需要输出0 or 1。我们可以预测：<br>若\( h_{\Theta}(x)&gt;=0.5 \)，预测\( y = 1 \)。<br>若\( h_{\Theta}(x)&lt;0.5 \)，预测\( y = 0 \)。<br>&ensp;&ensp;&ensp;&ensp;对于上面的数据，使用线性模型似乎可以完成分类任务。但是，如果我们加入一个新的Tumor size非常大的样本。加入训练集之后，这样就可以得到一个新的拟合直线。发现此时的使用0.5作为阈值已经不合适了。所有由此可见，线性回归模型不适合解决分类问题。</p>
+<ul>
+<li>线性回归的预测值是连续值的形式，不适概率的形式</li>
+<li>对数据分布比较敏感</li>
+<li><a href="https://blog.csdn.net/dpengwang/article/details/100159369" target="_blank" rel="noopener">参考资料：线性回归为什么不适合做分类</a></li>
+</ul>
+<p><img src="https://pic.downk.cc/item/5edf59bcc2a9a83be5e09046.jpg" alt=""></p>
+<p>&ensp;&ensp;&ensp;&ensp;引入新的模型：<strong>逻辑回归</strong>， 该模型的输出变量始终在0到1之间。假设\( h_{\Theta }(x) = g(\Theta^{T}x) \)。 其中\( x \)代表特征向量，\( g \)代表一个常用的逻辑函数 Sigmoid function，公式为 \( g(z) = \frac{1}{1+e^{-z}} \)。则可以得出\( h_{\theta }(x) = \frac{1}{1 + e^{-\Theta^{T}x }} \)</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">def</span> <span class="token function">sigmoid</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5edf76ffc2a9a83be50ac2d5.jpg" alt="sigmoid函数图像"></p>
+<p>&ensp;&ensp;&ensp;&ensp;\( h_{\theta }(x) \)的作用是根据给定的输入变量，根据选择的参数给出输出变量等于1的可能性（estimated probablity），即\( h_{\theta }(x) = P\{y = 1|x;\Theta \} \)。例如：如果对于给定的\( x \)，通过计算机得出\( h_{\theta }(x) = 0.7 \)，则表示70%的概率\( y \)为正向类，相应的30%的概率为负向类。</p>
+<h2 id="6-3-判定边界-Decision-Boundary"><a href="#6-3-判定边界-Decision-Boundary" class="headerlink" title="6.3 判定边界 Decision Boundary"></a>6.3 判定边界 Decision Boundary</h2><p><strong>加深理解逻辑回归的假设函数在计算什么？</strong>  </p>
+<p><img src="https://pic.downk.cc/item/5edf80a9c2a9a83be5186b59.jpg" alt=""></p>
+<p>在逻辑回归当中，我们预测：  </p>
+<ul>
+<li>若\( h_{\Theta}(x)&gt;=0.5 \)，预测\( y = 1 \)。  </li>
+<li>若\( h_{\Theta}(x)&lt;0.5 \)，预测\( y = 0 \)。</li>
+</ul>
+<p>根据绘制的 S 形函数图像，可以知道 \( z \) 和 \( g(z) \)之间的关系。 </p>
+<ul>
+<li>\( z = 0 \) 时，\( g(z) = 0.5 \)</li>
+<li>\( z &gt; 0 \) 时，\( g(z) &gt; 0.5 \)</li>
+<li>\( z &lt; 0 \) 时，\( g(z) &lt; 0.5 \) </li>
+</ul>
+<p>又 \( z=\Theta ^{T}x \)，即：\( \Theta ^{T}x&gt;=0 \)时，预测\( y=1 \)； \( \Theta ^{T}x&lt;0 \)时，预测\( y=0 \)；   </p>
+<p>假设有这样一个模型：  </p>
+<p><img src="https://pic.downk.cc/item/5edf8f0ac2a9a83be52e1eb7.jpg" alt=""></p>
 
             </div>
             <hr/>
@@ -715,18 +753,20 @@ gitment.render('gitment-content');
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="机器学习 分类">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="机器学习 Logistic Regression">
                         
-                        <span class="card-title">机器学习 分类</span>
+                        <span class="card-title">机器学习 Logistic Regression</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            机器学习 Logistic RegressionLogistic Regression是目前最流行使用最广泛的一种学习算法。常见的分类任务：
+                            
+
+机器学习 Logistic RegressionLogistic Regression是目前最流行使用最广泛的一种学习算法。常见的分类任务：
 
 Email: Spam / Not Spam ?
-Online Transcations: Fr
+Online Transcations: 
                         
                     </div>
                     <div class="publish-info">
@@ -1041,7 +1081,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.1k</span>&nbsp;字
+                class="white-color">12k</span>&nbsp;字
             
             
             
