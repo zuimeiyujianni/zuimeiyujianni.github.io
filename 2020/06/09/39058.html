@@ -414,14 +414,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    885
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -477,6 +477,33 @@
 <p>又 \( z=\Theta ^{T}x \)，即：\( \Theta ^{T}x&gt;=0 \)时，预测\( y=1 \)； \( \Theta ^{T}x&lt;0 \)时，预测\( y=0 \)；   </p>
 <p>假设有这样一个模型：  </p>
 <p><img src="https://pic.downk.cc/item/5edf8f0ac2a9a83be52e1eb7.jpg" alt=""></p>
+<p>并且参数是向量\( [-3, 1, 1] \)。当\( -3+x_{1}+x_{2}&gt;=0  \)，即\( x_{1}+x_{2}&gt;=3 \)，我们预测\( y=1 \)。我们可以绘制直线\( x_{1}+x_{2}=3 \)，这条直线便是我们模型的分界线，把我们预测为1和预测为0的区域分隔开。  </p>
+<p><img src="https://pic.downk.cc/item/5ee06958c2a9a83be511c149.jpg" alt=""></p>
+<p>如果数据分布是这样的话，需要什么样的模型呢？</p>
+<p><img src="https://pic.downk.cc/item/5ee06a6dc2a9a83be51490bc.jpg" alt=""></p>
+<p>以为是需要用到曲线才可以分割\( y=1 \)和\( y=0 \)的区域，因此我们需要二次方特征：$$ h_{\Theta }(x)=g(\Theta_{0}+\Theta_{1}x_{1}+\Theta_{2}x_{2}+\Theta_{3}x_{1}^{2}+\Theta_{4}x_{2}^{2})<br>$$参数\( \Theta^{T}=[-1, 0, 0, 1, 1] \)，可以得到判定边界恰好是圆心在原点且半径为1的圆形。现在已经可以使用非常复杂的模型来适应非常复杂形状的判定边界。</p>
+<h2 id="6-4-代价函数（Cost-Function）"><a href="#6-4-代价函数（Cost-Function）" class="headerlink" title="6.4 代价函数（Cost Function）"></a>6.4 代价函数（Cost Function）</h2><p>问题：之前已经学会了如何拟合线性回归模型的参数\( \Theta \)，那么如何拟合逻辑回归模型的参数\( \Theta \)？定义用来拟合参数的<strong>优化目标</strong>或者说是<strong>代价函数</strong>，便是监督学习问题中逻辑回归模型的拟合问题。</p>
+<p><img src="https://pic.downk.cc/item/5ee07144c2a9a83be523a97a.jpg" alt="">  </p>
+<p>对于<strong>线性回归模型</strong>，我们定义的代价函数是所有<strong>模型误差</strong>的平方和。如果对逻辑回归模型继续使用这个定义，问题出现了，当我们把我们把\( h_{\Theta}(x)=\frac{1}{1+e^{-\Theta^{T}x}} \)带入到定义的代价函数中时候，我们可以得到一个<strong>非凸函数（non-convexfunction）</strong>  </p>
+<p><img src="https://pic.downk.cc/item/5ee0734ac2a9a83be528d8f2.jpg" alt=""></p>
+<p>这种情况下，代价函数有很多局部最小值，这将会影响<strong>梯度下降算法</strong>寻找局部最小值。<br><strong>线性回归的代价函数</strong>\( J(\Theta)=\frac{1}{m}\sum_{i=1}^{m}\frac{1}{2}(h_{\Theta}(x^{(i)})-y^{(i)})^{2} \)。这里重新定义逻辑回归的代价函数为：$$ J(\Theta)=\frac{1}{m}\prod_{i=1}^{m}Cost(h_\Theta (x^{(i)})-y^{(i)}) $$其中</p>
+<p><img src="https://pic.downk.cc/item/5ee08d08c2a9a83be560f4dd.jpg" alt=""></p>
+<p>\( h_{\Theta}(x) \)和\( Cost(h_\Theta (x)-y) \)之间的关系如下：  </p>
+<p><img src="https://pic.downk.cc/item/5ee08f1bc2a9a83be566874a.jpg" alt=""></p>
+<p>这里的\( Cost(h_\Theta (x)-y) \)的特点是：若实际\( y=1 \)且\( h_\Theta (x) \)也是1时候误差为0，当\( h_\Theta (x) \)不是1时候误差随着\( h_\Theta (x) \)变小而增大；当实际的\( y=0 \)且\( h_\Theta (x) \)也是0的时候误差为0，当\( h_\Theta (x) \)不是0的时候误差随着\( h_\Theta (x) \)变大而变大。即：$$ Cost(h_\Theta (x)-y)=-ylog(h_{\Theta}(x))-(1-y)log(1-h_{\Theta}(x)) $$带入到代价函数得到：$$ J(\Theta)=\frac{1}{m}\prod_{i=1}^{m}Cost(h_\Theta (x^{(i)})-y^{(i)}) $$ $$ =\frac{1}{m}\prod_{i=1}^{m}(-y^{(i)}log(h_{\Theta}(x^{(i)}))-(1-y^{(i)})log(1-h_{\Theta}(x^{(i)})) $$ $$=-\frac{1}{m}\prod_{i=1}^{m}(y^{(i)}log(h_{\Theta}(x^{(i)}))+(1-y^{(i)})log(1-h_{\Theta}(x^{(i)})) $$</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">def</span> <span class="token function">sigmoid</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">cost</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>theta<span class="token punctuation">)</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    first <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span>y<span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    second <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>y<span class="token punctuation">)</span> <span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>first <span class="token operator">+</span> second<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+<p>在使用了这样的一个<strong>代价函数</strong>之后,我们就可以使用梯度下降算法计算使得代价函数最小的函数了。算法为：$$ \Theta_{j}:=\Theta_{j}-\alpha\frac{\partial }{\partial \Theta_{j}}J(\Theta) $$求导之后可以得到：</p>
 
             </div>
             <hr/>
@@ -744,61 +771,50 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/09/39058.html">
+                <a href="/2020/06/10/7567.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="机器学习 Logistic Regression">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="学习方法总结">
                         
-                        <span class="card-title">机器学习 Logistic Regression</span>
+                        <span class="card-title">学习方法总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            学习方法总结
+多实践感受
+做好学习的过程记录
 
-机器学习 Logistic RegressionLogistic Regression是目前最流行使用最广泛的一种学习算法。常见的分类任务：
 
-Email: Spam / Not Spam ?
-Online Transcations: 
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C/" class="post-category">
+                                    学习经验
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
-                        <span class="chip bg-color">吴恩达机器学习课程</span>
-                    </a>
-                    
-                    <a href="/tags/Logistic-Regression/">
-                        <span class="chip bg-color">Logistic Regression</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C/">
+                        <span class="chip bg-color">学习经验</span>
                     </a>
                     
                 </div>
@@ -1081,7 +1097,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12k</span>&nbsp;字
+                class="white-color">13k</span>&nbsp;字
             
             
             
