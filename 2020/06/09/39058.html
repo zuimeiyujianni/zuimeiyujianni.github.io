@@ -407,21 +407,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-10
+                    2020-06-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    12 分
                 </div>
                 
 
@@ -477,7 +477,7 @@
 <p>又 \( z=\Theta ^{T}x \)，即：\( \Theta ^{T}x&gt;=0 \)时，预测\( y=1 \)； \( \Theta ^{T}x&lt;0 \)时，预测\( y=0 \)；   </p>
 <p>假设有这样一个模型：  </p>
 <p><img src="https://pic.downk.cc/item/5edf8f0ac2a9a83be52e1eb7.jpg" alt=""></p>
-<p>并且参数是向量\( [-3, 1, 1] \)。当\( -3+x_{1}+x_{2}&gt;=0  \)，即\( x_{1}+x_{2}&gt;=3 \)，我们预测\( y=1 \)。我们可以绘制直线\( x_{1}+x_{2}=3 \)，这条直线便是我们模型的分界线，把我们预测为1和预测为0的区域分隔开。  </p>
+<p>并且参数是向量\( [-3, 1, 1] \)。当\( -3+x_{1}+x_{2}&gt;=0  \)，即\( x_{1}+x_{2}&gt;=3 \)，我们预测\( y=1 \)。我们可以绘制直线\( x_{1}+x_{2}=3 \)，这条直线便是我们模型的分界线(它就是决策界限，是假设函数和参数两者对应的一个属性，而不是数据集的属性)，把我们预测为1和预测为0的区域分隔开。  </p>
 <p><img src="https://pic.downk.cc/item/5ee06958c2a9a83be511c149.jpg" alt=""></p>
 <p>如果数据分布是这样的话，需要什么样的模型呢？</p>
 <p><img src="https://pic.downk.cc/item/5ee06a6dc2a9a83be51490bc.jpg" alt=""></p>
@@ -503,7 +503,28 @@
     first <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span>y<span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     second <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>y<span class="token punctuation">)</span> <span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>first <span class="token operator">+</span> second<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
-<p>在使用了这样的一个<strong>代价函数</strong>之后,我们就可以使用梯度下降算法计算使得代价函数最小的函数了。算法为：$$ \Theta_{j}:=\Theta_{j}-\alpha\frac{\partial }{\partial \Theta_{j}}J(\Theta) $$求导之后可以得到：</p>
+<p>在使用了这样的一个<strong>代价函数</strong>之后,我们就可以使用梯度下降算法计算使得代价函数最小的函数了。算法为：<br>$$ \frac{\partial }{\partial \Theta_{j}}J(\Theta ):=\frac{1}{m}\sum_{i=1}^{m}[h_{\Theta }(x^{(i)})-y^{(i)}]x_{j}^{(i)} $$ 计算的过程如下：$$ J(\Theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}log(h_{\Theta}(x^{(i)}))-(1-y^{(i)})log(1-h_{\Theta}(x^{(i)}))] $$ $$ =-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\Theta}(x^{(i)}))+(1-y^{(i)})log(1-h_{\Theta}(x^{(i)}))] $$ 而且 $$ y^{(i)}log(\frac{1}{1+e^{-\Theta^{T}x^{(i)}}})+(1-y^{(i)})log(1-\frac{1}{1+e^{-\Theta^{T}x^{(i)}}}) $$ $$ =-y^{(i)}log(1+e^{-\Theta^{T}x^{(i)}})-(1-y^{(i)})log(1+e^{\Theta^{T}x^{(i)}}) $$ 由此可以得到： $$ \frac{\partial}{\partial \Theta_{j}}J(\Theta)=-\frac{1}{m}\sum_{i=1}^{m}\frac{\partial}{\partial \Theta_{j}}[-y^{(i)}log(1+e^{-\Theta^{T}x^{(i)}})-(1-y^{(i)})log(1+e^{\Theta^{T}x^{(i)}})] $$ $$ =-\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\frac{\partial}{\partial \Theta_{j}}log(1+e^{-\Theta^{T}x^{(i)}})-(1-y^{(i)})\frac{\partial }{\partial \Theta_{j}}log(1+e^{\Theta^{T}x^{(i)}})] $$ $$ =-\frac{1}{m}\sum_{i=1}^{m}[\frac{x_{j}^{(i)}y^{(i)}}{1+e^{\Theta^{T}x^{(i)}}}+\frac{e^{-\Theta ^{T}x^{(i)}}x_{j}^{(i)}(y^{(i)}-1)}{1+e^{\Theta^{T}x^{(i)}}}] $$ $$ =\frac{1}{m}\sum_{i=1}^{m}[h_{\Theta}(x^{(i)})-y^{(i)}]x_{j}^{(i)} $$</p>
+<p>这里的我们定义了单训练样本的代价函数，这里选择的代价函数给了一个凸优化问题，没有局部最优值。因此可以使用梯度下降算法进行求使得代价函数最小的参数。<br>eg. 在使用梯度下降算法之前，使用特征缩放是有必要的。这样加快梯度下降算法的运行时间。除了梯度下降算法，还有一些经常用来使得代价函数最小的算法。这些算法更加的复杂和优秀，而且通常不需要人工选择学习率，通常比梯度下降算法更加的优秀。例如：</p>
+<ul>
+<li>共轭梯度（Conjugate Gradient）</li>
+<li>局部优化法（BFGS,Broyden fletcher goldfarbg shann）</li>
+<li>有限内存局部优化法（LBFGS）</li>
+</ul>
+<h2 id="6-5-简化的成本函数和梯度下降"><a href="#6-5-简化的成本函数和梯度下降" class="headerlink" title="6.5 简化的成本函数和梯度下降"></a>6.5 简化的成本函数和梯度下降</h2><h2 id="6-6-高级优化"><a href="#6-6-高级优化" class="headerlink" title="6.6 高级优化"></a>6.6 高级优化</h2><p>上面6.4已经讲过了。补充一下：这里使用的逻辑回归对应的假设函数的预测值是一个概率，表示 \( p(y=1|x;\Theta) \) ，就是关于x以\( \theta \)为参数，y = 1的概率。即假设就是估计y=1的概率。<br>注意监控梯度下降算法以保证梯度下降算法收敛。</p>
+<h2 id="6-7-多类别分类：一对多"><a href="#6-7-多类别分类：一对多" class="headerlink" title="6.7 多类别分类：一对多"></a>6.7 多类别分类：一对多</h2><p>例如判断天气：y=1表示晴天，y=2表示多云，y=3表示雨天，y=4表示下雪天。<br>之前学过二分类问题：</p>
+<p><img src="https://pic.downk.cc/item/5ee73b91c2a9a83be5239645.jpg" alt=""></p>
+<p>多分类问题是这样的：</p>
+<p><img src="https://pic.downk.cc/item/5ee73bb7c2a9a83be523bdeb.jpg" alt=""></p>
+<p>这里使用三种符号表示三种不同的类别，问题是给出三个类别的数据集，如何进行分类呢？可以使用”一对余”的方法。</p>
+<p><img src="https://pic.downk.cc/item/5ee73c47c2a9a83be5246149.jpg" alt=""></p>
+<p>现在有一个训练集，如上图表示一共有三种类别，这里使用三角形表示y=1；用方框表示y=2；用叉叉表示y=3。下面要做的事情就是使用一个训练集，将其分成3个二元分类问题。 </p>
+<p>这里从三角形表示的类别1开始，我们是是实际上创建一个新的伪的训练集。将类别2和类别3定义为父类，类别1定义为正类，创建的新的训练集如下图所以，我们根据新的训练集拟合出一个合适的分类器。  </p>
+<p><img src="https://pic.downk.cc/item/5ee73dbdc2a9a83be52699b2.jpg" alt=""></p>
+<p>这里的三角形是正样例，而圆形是负样例。设置三角形的值为1，圆形的值为0，这样我们可以训练一个标准的逻辑回归分类器，这样我们可以得到一个决策边界。  </p>
+<p>为了能够实现上面的想法，我们把多个类别中的一个类别标记为正向类（y=1），然后其余的类别标记为负向类，这个模型记作\( h_{\Theta }^{(1)}(x) \)。类似的，我们选择另一个类标记为正向类（y=2），再将其他的类别标记为负向类，将这个模型记作\( h_{\Theta }^{(2)}(x) \)。依次类推，最后得到一个模型简记为：\( h_{\Theta }^{(i)}(x)=p(y=i| x;\Theta) \),其中: \( i=(1,2,3,..k) \)，k是不同的类别总数。这样，一共可以得到k个分类器。  </p>
+<p>在进行预测的时候，把k个分类器都运行一遍，然后对每一个输入的变量，选择最高可能性的输出变量。  </p>
+<p>训练逻辑分类器\( h_{\Theta }^{(i)}(x) \)，其中 i 对应每一个可能的 y = i 。最后，为了预测，给出一个新的 x 的值，对它进行预测。在分类器中输入 x ，然后选择一个让 \( h_{\Theta }^{(i)}(x) \) 最大的 i ，即 \( \max_{i} h_{\Theta }^{(i)}(x) \)。  </p>
+<p>到此已经知道了挑选分类器的方法，选择出的分类器是可信度最高效果最好的，那么可以认为是一个正确的分类。无论 i 的值是多少，我们都有最高的概率值，我们的预测 y 就是那个值。</p>
 
             </div>
             <hr/>
@@ -1097,7 +1118,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13k</span>&nbsp;字
+                class="white-color">16.5k</span>&nbsp;字
             
             
             

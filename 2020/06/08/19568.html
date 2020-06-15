@@ -403,21 +403,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-09
+                    2020-06-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    382
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -459,7 +459,97 @@
 <li><p><code>ls -i</code>&ensp;查看索引节点的编号，该编号唯一标记该节点。</p>
 </li>
 </ul>
-<h3 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h3><h3 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h3><h3 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h3>
+<h3 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h3><ul>
+<li><p>创建目录mkdir</p>
+<ul>
+<li>可以直接使用<code>makedir /tmp/Japan/movie</code>，但是如果没有<code>/tmp/Japan</code>目录，那么不可以创建成功。此时加上参数 -p 进行递归的创建目录。</li>
+<li>可以在makedir后面添加多个目录，同时进行多个目录的创建。</li>
+</ul>
+</li>
+<li><p>查看当前的目录 <code>pwd</code>，用于查看当前的工作目录。</p>
+</li>
+<li><p>删除目录 <code>rmdir</code>（删除<strong>空</strong>目录）</p>
+<ul>
+<li>当删除非空的目录时候，需要先把该目录下的所有内容删除，然后删除该目录。</li>
+</ul>
+</li>
+<li><p>复制文件或者目录 <code>cp</code>，参数两个，一个是要被复制的文件，一个是要放置的位置。例如：<code>cp /root/install.log /tmp/movie</code>。（此时文件的最后修改时间发生的变化）</p>
+<ul>
+<li>添加参数-p，那么可以保留源文件的属性，例如最后修改时间。例如：<code>cp -p /root/install.log /tmp/movie</code></li>
+<li>复制文件夹使用参数 -r</li>
+<li>在复制的时候进行名称的修改，例如：<code>cp -r /root/Janpan/longze  /root/longzemovie</code></li>
+</ul>
+</li>
+<li><p>剪切和更名 <code>mv</code></p>
+<ul>
+<li>剪切操作，例如<code>mv /tmp/cangjin /root</code>，eg.可以同时剪切多个文件</li>
+<li>更名操作(剪切的操作同时进行改名)，例如<code>mv /tmp/changjin /root//nvshen</code></li>
+</ul>
+</li>
+<li><p>删除命令 <code>rm</code></p>
+<ul>
+<li>删除文件 <code>rm /tmp/demo.txt</code></li>
+<li>强制删除，使用参数-f， <code>rm -f /tmp/demo.txt</code></li>
+<li>删除目录，添加参数-r，如果强制删除目录，则使用-rf，例如:<code>rm -rf /tmp/Janpan</code>。这样就把<code>/tmp/Janpan</code>这个目录给删除了。</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h3><ul>
+<li>创建文件 <code>touch 文件名</code>，例如<code>touch /tmp/Janpanlovestory.list</code>，也可以使用<code>touch Janpanlovestory.list</code>表示在当前的目录下创建一个文件。<ul>
+<li>如果创建的文件名称包含空格的时候，则需要使用双引号把文件名包裹。例如：<code>touch &quot;Janpan lovestory.list&quot;</code>。不建议使用空格。</li>
+</ul>
+</li>
+<li>查看文件的内容使用<code>cat</code>命令：使用cat在后面添加文件的名称。可以使用参数-n显示行号。<ul>
+<li>如果文件非常长的时候，那么不适合使用cat参看。</li>
+<li>使用倒着的命令<code>tac</code>，那么可以反着显示文件的内容。</li>
+</ul>
+</li>
+<li>文件非常长的时候使用<code>more</code>进行分页显示（在more 后添加文件名称）：使用f进行翻页，使用回车进行换行，使用q or Q退出。（不能往前翻页，只能往后翻页）</li>
+<li>文件非常长的时候使用<code>less</code><ul>
+<li>和命令more的不同之处在于：该命令可以往前翻页</li>
+<li>使用<code>/关键词</code>可以进行检索，使用n查看下一个关键词所在的位置。</li>
+</ul>
+</li>
+<li>查看文件的前几行，使用<code>head -n 10 /tmp/hello.txt</code>表示查看文件<code>/tmp/hello.txt</code>这个大文件的前10行。</li>
+<li>查看文件最后的几行，使用<code>tail -n 20 /tmp/hello.txt</code>表示查看文件<code>/tmp/hello.txt</code>这个大文件的最后20行。<ul>
+<li>使用参数 -f 动态的显示文件末尾的内容。</li>
+</ul>
+</li>
+</ul>
+<h3 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h3><ul>
+<li>链接命令 <code>ln</code><ul>
+<li>只有一个参数 -s. 语法<code>ln [-s] [源文件] [目标文件]</code><ul>
+<li>（软连接）例如：<code>ln -s /etc/issue /tmp/issue.soft</code></li>
+<li>（硬链接）例如：<code>ln /etc/issue /tmp/issue.hard</code></li>
+<li>软链接的文件类型是<code>l</code>。类型windows中的快捷方式。软连接是一个符号链接，它非常的小。属性是<code>lrwxrwxrwx</code>。(软链接有一个箭头指向)</li>
+<li>硬链接的特点<ul>
+<li>与<code>cp -p</code>不同的是，硬链接文件能够实现同步更新。</li>
+<li>硬链接在源文件被删除之后依旧可以正常的使用。而软连接在源文件被删除之后便不能够继续使用了。（硬链接是共用一个i结点）</li>
+<li>不能跨分区（软链接阔以的）</li>
+<li>不能针对目录使用。（软链接阔以的）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="权限管理命令-chmod"><a href="#权限管理命令-chmod" class="headerlink" title="权限管理命令 chmod"></a>权限管理命令 <code>chmod</code></h3><ul>
+<li>可以修改文件权限的人：root和文件所有者</li>
+<li>语法<code>chmod [{ugoa} {+-=} {rxw}] [文件或目录] [mode=421] [文件或目录]</code></li>
+<li>给文件所有者添加执行权限 <code>chmod u+x /tmp/Janpan/Janpanlovestory.list</code></li>
+<li>修改文件所属组的权限：<code>chmod g=rwx /tmp/Janpan/Janpanlovestory.list</code></li>
+<li>权限的数字表示：<ul>
+<li>r 4</li>
+<li>w 2</li>
+<li>x 1</li>
+<li>例：rwxrw-r– 7 6 4</li>
+<li>使用数字的方式修改权限非常的直观<code>chmod 640 /tmp/Japan/Japanlovestory.txt</code></li>
+</ul>
+</li>
+<li><code>-R的作用</code>:递归的进行修改，即使用<code>chmod ... -R 目录名称</code></li>
+</ul>
+
             </div>
             <hr/>
 
@@ -1050,7 +1140,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13k</span>&nbsp;字
+                class="white-color">16.5k</span>&nbsp;字
             
             
             
