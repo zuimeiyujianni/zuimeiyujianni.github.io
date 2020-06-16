@@ -367,12 +367,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python%E8%AF%AD%E6%B3%95/">
-                                <span class="chip bg-color">python语法</span>
-                            </a>
-                        
                             <a href="/tags/numpy/">
                                 <span class="chip bg-color">numpy</span>
+                            </a>
+                        
+                            <a href="/tags/python%E8%AF%AD%E6%B3%95/">
+                                <span class="chip bg-color">python语法</span>
                             </a>
                         
                             <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
@@ -407,21 +407,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-13
+                    2020-06-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    902
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -431,191 +431,165 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python语法-Numpy"><a href="#python语法-Numpy" class="headerlink" title="python语法 Numpy"></a>python语法 Numpy</h1><h4 id="创建np-ndarray数组"><a href="#创建np-ndarray数组" class="headerlink" title="创建np.ndarray数组"></a>创建np.ndarray数组</h4><pre><code>```python
-import numpy as np
-import random
+                <h1 id="python语法-Numpy"><a href="#python语法-Numpy" class="headerlink" title="python语法 Numpy"></a>python语法 Numpy</h1><h4 id="创建np-ndarray数组-矩阵"><a href="#创建np-ndarray数组-矩阵" class="headerlink" title="创建np.ndarray数组(矩阵)"></a>创建np.ndarray数组(矩阵)</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> random
 
-# 使用numpy生成数组，得到ndarray类型
-t1 = np.array([1,2,3])
-print(t1)
-print(type(t1))
+<span class="token comment" spellcheck="true"># 使用numpy生成数组，得到ndarray类型</span>
+t1 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t1<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-t2 = np.array(range(10))
-print(t2)
-print(type(t2))
+t2 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t2<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-t3 = np.arange(4,10.25,2)
-print(t3)
-print(type(t3))
+t3 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">10.25</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t3<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t3<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 查看ndarray类型对象中保存的数据类型
-print(t3.dtype)
+<span class="token comment" spellcheck="true"># 查看ndarray类型对象中保存的数据类型</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t3<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
 
-# 设置numpy数组数据类型
-t4 = np.array(range(1,4), dtype=float)
-print(t4)
-print(t4.dtype)
+<span class="token comment" spellcheck="true"># 设置numpy数组数据类型</span>
+t4 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>float<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t4<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t4<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
 
-# numpy中的bool类型
-t5 = np.array([1,0,1,1,0,0], dtype=bool)
-print(t5)
-print(type(t5))
+<span class="token comment" spellcheck="true"># numpy中的bool类型</span>
+t5 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>bool<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t5<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t5<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 调整数据类型
-t6 = t5.astype(&quot;int8&quot;)
-print(t6)
-print(type(t6))
+<span class="token comment" spellcheck="true"># 调整数据类型</span>
+t6 <span class="token operator">=</span> t5<span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">"int8"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t6<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t6<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# numpy中的小数
-t7 = np.array([random.random() for i in range(10)])
-print(t7)
-print(type(t7))
+<span class="token comment" spellcheck="true"># numpy中的小数</span>
+t7 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t7<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t7<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-# 取小数，保留小数点后的两位
-t8 = np.round(t7, 2)
-print(t8)
-```
-![运行的结果](https://pic.downk.cc/item/5ee0e4aec2a9a83be5ee9479.jpg)
+<span class="token comment" spellcheck="true"># 取小数，保留小数点后的两位</span>
+t8 <span class="token operator">=</span> np<span class="token punctuation">.</span>round<span class="token punctuation">(</span>t7<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t8<span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee0e4aec2a9a83be5ee9479.jpg" alt="运行的结果"></p>
+<ul>
+<li>数组的形状</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># numpy数组的形状</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+t1 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t1<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">50</span><span class="token punctuation">)</span>
 
-* 数组的形状
+t2 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t2<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">50</span><span class="token punctuation">)</span>
 
-```python
-# numpy数组的形状
-import numpy as np
-t1 = np.arange(12)
-print(t1)
-print(t1.shape)
-print(&quot;*&quot; * 50)
+t3 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t3<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t3<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">50</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee0fd4ac2a9a83be5121074.jpg" alt="运行结果">  </p>
+<h4 id="改变数组的形状"><a href="#改变数组的形状" class="headerlink" title="改变数组的形状"></a>改变数组的形状</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 改变numpy数组的形状</span>
+t4 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t4<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t4<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">50</span><span class="token punctuation">)</span>
 
-t2 = np.array([[1,2,3],[4,5,6]])
-print(t2)
-print(t2.shape)
-print(&quot;*&quot; * 50)
+<span class="token comment" spellcheck="true"># t4原先有12个数据，3*4刚好是12</span>
+<span class="token comment" spellcheck="true"># resize是改变原数组的,但是reshape却不改变</span>
+t5 <span class="token operator">=</span> t4<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t5<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t5<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">50</span><span class="token punctuation">)</span>
 
-t3 = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])
-print(t3)
-print(t3.shape)
-print(&quot;*&quot; * 50)
-```
+t6 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t6<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t6<span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee0fdb4c2a9a83be512d399.jpg" alt="运行结果"></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 把t6改变成为一个1维的数组</span>
+t6 <span class="token operator">=</span> t6<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t6<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t6<span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee0fdf1c2a9a83be51338de.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 当不知道t6的具体形状的时候（需要知道维度），将t6改变成为一个1维数组</span>
+t6 <span class="token operator">=</span> t6<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span>t6<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span>t6<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">*</span>t6<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 使用flatten()方法把数组转换成1维</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 把数组转化成1维的数组</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee0fe71c2a9a83be514205b.jpg" alt=""></p>
+<h4 id="数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）"><a href="#数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）" class="headerlink" title="数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）"></a>数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
-![运行结果](https://pic.downk.cc/item/5ee0fd4ac2a9a83be5121074.jpg)  </code></pre><h4 id="改变数组的形状"><a href="#改变数组的形状" class="headerlink" title="改变数组的形状"></a>改变数组的形状</h4><pre><code>```python
-# 改变numpy数组的形状
-t4 = np.arange(12)
-print(t4)
-print(t4.shape)
-print(&quot;*&quot; * 50)
+m <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span> <span class="token operator">+</span> <span class="token string">"分割线"</span> <span class="token operator">+</span> <span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span>
 
-# t4原先有12个数据，3*4刚好是12
-# resize是改变原数组的,但是reshape却不改变
-t5 = t4.reshape((3,4))
-print(t5)
-print(t5.shape)
-print(&quot;*&quot; * 50)
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># +1的操作时对数组的每一个元素施加操作（numpy的广播机制）</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span> <span class="token operator">+</span> <span class="token string">"分割线"</span> <span class="token operator">+</span> <span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span>
 
-t6 = np.arange(24).reshape((2,3,4))
-print(t6)
-print(t6.shape)
-```
-![运行结果](https://pic.downk.cc/item/5ee0fdb4c2a9a83be512d399.jpg)
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span> <span class="token operator">+</span> <span class="token string">"分割线"</span> <span class="token operator">+</span> <span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee1019ec2a9a83be519741b.jpg" alt="运行结果"></p>
+<p>注意：m / 0 的结果比较特殊。其中nan表示非数，inf表示无穷大值。</p>
+<p><img src="https://pic.downk.cc/item/5ee101f0c2a9a83be51a009c.jpg" alt="m/0的结果"></p>
+<h4 id="数组和数组进行计算-两个数组的维度相同"><a href="#数组和数组进行计算-两个数组的维度相同" class="headerlink" title="数组和数组进行计算(两个数组的维度相同)"></a>数组和数组进行计算(两个数组的维度相同)</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
-```python
-# 把t6改变成为一个1维的数组
-t6 = t6.reshape((24))
-print(t6)
-print(t6.shape)
-```
-![](https://pic.downk.cc/item/5ee0fdf1c2a9a83be51338de.jpg)
+m1 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+m2 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">124</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-```python
-# 当不知道t6的具体形状的时候（需要知道维度），将t6改变成为一个1维数组
-t6 = t6.reshape((t6.shape[0]*t6.shape[1]*t6.shape[2],))
-```
+<span class="token keyword">print</span><span class="token punctuation">(</span>m1 <span class="token operator">+</span> m2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span> <span class="token operator">+</span> <span class="token string">"分割线"</span> <span class="token operator">+</span> <span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span>
 
-```python
-# 使用flatten()方法把数组转换成1维
-a = np.arange(12).reshape((3,4))
-print(a.shape)
-b = a.flatten() # 把数组转化成1维的数组
-```
-![](https://pic.downk.cc/item/5ee0fe71c2a9a83be514205b.jpg)</code></pre><h4 id="数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）"><a href="#数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）" class="headerlink" title="数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）"></a>数组和数的操作（numpy的广播机制使得加减乘除操作作用到每一个元素上）</h4><pre><code>```python
-import numpy as np
+<span class="token keyword">print</span><span class="token punctuation">(</span>m1 <span class="token operator">-</span> m2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span> <span class="token operator">+</span> <span class="token string">"分割线"</span> <span class="token operator">+</span> <span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span>
 
-m = np.arange(24).reshape((4, 6))
-print(m)
-print(&quot;*&quot; * 25 + &quot;分割线&quot; + &quot;*&quot; * 25)
+<span class="token keyword">print</span><span class="token punctuation">(</span>m1 <span class="token operator">*</span> m2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span> <span class="token operator">+</span> <span class="token string">"分割线"</span> <span class="token operator">+</span> <span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span>
 
-print(m+1) # +1的操作时对数组的每一个元素施加操作（numpy的广播机制）
-print(&quot;*&quot; * 25 + &quot;分割线&quot; + &quot;*&quot; * 25)
+<span class="token keyword">print</span><span class="token punctuation">(</span>m1 <span class="token operator">/</span> m2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span> <span class="token operator">+</span> <span class="token string">"分割线"</span> <span class="token operator">+</span> <span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee10833c2a9a83be523a900.jpg" alt=""></p>
+<h4 id="数组和数组进行计算-两个数组的维度不同"><a href="#数组和数组进行计算-两个数组的维度不同" class="headerlink" title="数组和数组进行计算(两个数组的维度不同)"></a>数组和数组进行计算(两个数组的维度不同)</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
-print(m*2)
-print(&quot;*&quot; * 25 + &quot;分割线&quot; + &quot;*&quot; * 25)
-```
-
-![运行结果](https://pic.downk.cc/item/5ee1019ec2a9a83be519741b.jpg)
-
-注意：m / 0 的结果比较特殊。其中nan表示非数，inf表示无穷大值。
-
-![m/0的结果](https://pic.downk.cc/item/5ee101f0c2a9a83be51a009c.jpg)</code></pre><h4 id="数组和数组进行计算-两个数组的维度相同"><a href="#数组和数组进行计算-两个数组的维度相同" class="headerlink" title="数组和数组进行计算(两个数组的维度相同)"></a>数组和数组进行计算(两个数组的维度相同)</h4><pre><code>```python
-import numpy as np
-
-m1 = np.arange(24).reshape((4, 6))
-m2 = np.arange(100, 124).reshape((4, 6))
-
-print(m1 + m2)
-print(&quot;*&quot; * 25 + &quot;分割线&quot; + &quot;*&quot; * 25)
-
-print(m1 - m2)
-print(&quot;*&quot; * 25 + &quot;分割线&quot; + &quot;*&quot; * 25)
-
-print(m1 * m2)
-print(&quot;*&quot; * 25 + &quot;分割线&quot; + &quot;*&quot; * 25)
-
-print(m1 / m2)
-print(&quot;*&quot; * 25 + &quot;分割线&quot; + &quot;*&quot; * 25)
-```
-
-![](https://pic.downk.cc/item/5ee10833c2a9a83be523a900.jpg)</code></pre><h4 id="数组和数组进行计算-两个数组的维度不同"><a href="#数组和数组进行计算-两个数组的维度不同" class="headerlink" title="数组和数组进行计算(两个数组的维度不同)"></a>数组和数组进行计算(两个数组的维度不同)</h4><pre><code>```python
-import numpy as np
-
-m1 = np.arange(10)
-m2 = np.arange(3)
-m3 = np.arange(30).reshape((3, 10))
-print(m1)
-print()
-print(m2)
-print()
-print(m3)
-print()
-print(m3 - m1) # 对每一行进行操作
-print()
-print(m3 - m2) # 对每一列进行操作
-```
-![](https://pic.downk.cc/item/5ee10fccc2a9a83be531774f.jpg)
-
-![](https://pic.downk.cc/item/5ee11a0bc2a9a83be5442d4e.jpg)</code></pre><h4 id="轴-axis"><a href="#轴-axis" class="headerlink" title="轴(axis)"></a>轴(axis)</h4><ul>
-<li><p>在Numpy中可以理解为方向，用数字0，1，2，…表示，对于一个一维的数组，只有一个0轴，对于二位的数组，有0轴和1轴，对于三维的数组，有0轴，1轴和2轴。</p>
-</li>
-<li><p>有了轴的概念，计算会更加的方便。比如计算2维数组的平均值，必须指定是那个方向上的数字平均值。</p>
+m1 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+m2 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+m3 <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m3<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m3 <span class="token operator">-</span> m1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 对每一行进行操作</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m3 <span class="token operator">-</span> m2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 对每一列进行操作</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee10fccc2a9a83be531774f.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5ee11a0bc2a9a83be5442d4e.jpg" alt=""></p>
+<h4 id="轴-axis"><a href="#轴-axis" class="headerlink" title="轴(axis)"></a>轴(axis)</h4><ul>
+<li>在Numpy中可以理解为方向，用数字0，1，2，…表示，对于一个一维的数组，只有一个0轴，对于二位的数组，有0轴和1轴，对于三维的数组，有0轴，1轴和2轴。</li>
+<li>有了轴的概念，计算会更加的方便。比如计算2维数组的平均值，必须指定是那个方向上的数字平均值。</li>
+</ul>
 <p><img src="https://pic.downk.cc/item/5ee12ac2c2a9a83be5598ee0.jpg" alt=""></p>
 <p><img src="https://pic.downk.cc/item/5ee12b14c2a9a83be559eb45.jpg" alt=""></p>
-</li>
-</ul>
-<h4 id="numpy读取CSV文件（实际使用中用pandas）"><a href="#numpy读取CSV文件（实际使用中用pandas）" class="headerlink" title="numpy读取CSV文件（实际使用中用pandas）"></a>numpy读取CSV文件（实际使用中用pandas）</h4><pre><code>```python
-#fname是文件路径和名称；
-#dtype是文件中的数据类型；
-#delimiter是文件中的分隔符；
-#unpack是True实现类似矩阵的转置；
-import numpy as np
-np.loadtxt(fname, dtype=&quot;float&quot;, comments=&#39;#&#39;, delimiter=&quot;,&quot;, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)
-```    </code></pre><p><img src="https://pic.downk.cc/item/5ee41bfec2a9a83be55ac2a5.jpg" alt=""></p>
-<pre><code>```python
-import numpy as np
+<h4 id="numpy读取CSV文件（实际使用中用pandas）"><a href="#numpy读取CSV文件（实际使用中用pandas）" class="headerlink" title="numpy读取CSV文件（实际使用中用pandas）"></a>numpy读取CSV文件（实际使用中用pandas）</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#fname是文件路径和名称；</span>
+<span class="token comment" spellcheck="true">#dtype是文件中的数据类型；</span>
+<span class="token comment" spellcheck="true">#delimiter是文件中的分隔符；</span>
+<span class="token comment" spellcheck="true">#unpack是True实现类似矩阵的转置；</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+np<span class="token punctuation">.</span>loadtxt<span class="token punctuation">(</span>fname<span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token string">"float"</span><span class="token punctuation">,</span> comments<span class="token operator">=</span><span class="token string">'#'</span><span class="token punctuation">,</span> delimiter<span class="token operator">=</span><span class="token string">","</span><span class="token punctuation">,</span> converters<span class="token operator">=</span>None<span class="token punctuation">,</span> skiprows<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> usecols<span class="token operator">=</span>None<span class="token punctuation">,</span> unpack<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> ndmin<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5ee41bfec2a9a83be55ac2a5.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
-file_path = r&quot;c:\users\wanggongsheng\desktop\students.csv&quot;
-m = np.loadtxt(file_path, delimiter=&quot;,&quot;, dtype=&quot;str&quot;)
-print(m.shape)
-print(m)
-```</code></pre><h4 id="numpy转置一个array"><a href="#numpy转置一个array" class="headerlink" title="numpy转置一个array"></a>numpy转置一个array</h4><p><img src="https://pic.downk.cc/item/5ee41de4c2a9a83be55bb53b.jpg" alt=""></p>
+file_path <span class="token operator">=</span> r<span class="token string">"c:\users\wanggongsheng\desktop\students.csv"</span>
+m <span class="token operator">=</span> np<span class="token punctuation">.</span>loadtxt<span class="token punctuation">(</span>file_path<span class="token punctuation">,</span> delimiter<span class="token operator">=</span><span class="token string">","</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token string">"str"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span></code></pre>
+<h4 id="numpy转置一个array"><a href="#numpy转置一个array" class="headerlink" title="numpy转置一个array"></a>numpy转置一个array</h4><p><img src="https://pic.downk.cc/item/5ee41de4c2a9a83be55bb53b.jpg" alt=""></p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -685,12 +659,12 @@ a <span class="token operator">=</span> a<span class="token punctuation">.</span
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python%E8%AF%AD%E6%B3%95/">
-                                    <span class="chip bg-color">python语法</span>
-                                </a>
-                            
                                 <a href="/tags/numpy/">
                                     <span class="chip bg-color">numpy</span>
+                                </a>
+                            
+                                <a href="/tags/python%E8%AF%AD%E6%B3%95/">
+                                    <span class="chip bg-color">python语法</span>
                                 </a>
                             
                                 <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
@@ -1196,7 +1170,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.9k</span>&nbsp;字
+                class="white-color">18.2k</span>&nbsp;字
             
             
             
