@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="学习方法总结, 海洋之心">
+    <meta name="keywords" content="机器学习 Regularization, 海洋之心">
     <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学习方法总结 | 海洋之心</title>
+    <title>机器学习 Regularization | 海洋之心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">学习方法总结</h1>
+                    <h1 class="description center-align post-title">机器学习 Regularization</h1>
                 </div>
             </div>
         </div>
@@ -367,8 +367,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C/">
-                                <span class="chip bg-color">学习经验</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
+                                <span class="chip bg-color">吴恩达机器学习课程</span>
+                            </a>
+                        
+                            <a href="/tags/Regularization/">
+                                <span class="chip bg-color">Regularization</span>
                             </a>
                         
                     </div>
@@ -379,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C/" class="post-category">
-                                学习经验
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -392,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-10
+                    2020-06-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-06-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    27
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -423,10 +431,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="学习方法总结"><a href="#学习方法总结" class="headerlink" title="学习方法总结"></a>学习方法总结</h1><ul>
-<li>多实践感受</li>
-<li>做好学习的过程记录</li>
-<li>基础知识很重要</li>
+                <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h1 id="机器学习-Regularization"><a href="#机器学习-Regularization" class="headerlink" title="机器学习 Regularization"></a>机器学习 Regularization</h1><h2 id="7-1-过拟合问题"><a href="#7-1-过拟合问题" class="headerlink" title="7.1 过拟合问题"></a>7.1 过拟合问题</h2><p><strong>线性回归</strong> 和 <strong>逻辑回归</strong> 能够有效的解决许多问题，但是在应用到某些特定的机器学习应用中时候，会出现 <strong>过拟合（over-fitting）</strong> 的问题，泛化能力很差。通过使用 <strong>正则化</strong>，可以改善和减少过拟合的问题。<br>如果数据集有非常多的特征，那么通过学习得到的模型可能非常好的适应训练集（代价函数接近0），即过拟合，但是泛化能力差。  </p>
+<p><img src="https://i.loli.net/2020/06/27/RYUIhnyAKvXLWTt.png" alt="回归问题例子"></p>
+<p>图一使用线性模型，<strong>欠拟合</strong> ，不能很好的适应训练集。图三使用了四次方的模型，过于强调拟合原始数据，导致出现过拟合情况，使得模型的泛化能力不好。</p>
+<p><img src="https://i.loli.net/2020/06/27/gLSEQwyVZACizHG.png" alt="分类问题例子"></p>
+<p>这里使用多项式来理解，简单来说：多项式的x的次数越高，拟合的越好，但是泛化能力可能变差。如何解决过拟合问题呢？  </p>
+<ul>
+<li>丢弃一些不重要特征，即丢弃对我们正确的预测结果帮助不大的feature。可以手工选择或者使用算法帮忙，例如PAC算法。</li>
+<li>正则化。保留所有的特征，但是减少参数的大小（magnitude，即量级）。</li>
+</ul>
+<h2 id="7-2-代价函数"><a href="#7-2-代价函数" class="headerlink" title="7.2 代价函数"></a>7.2 代价函数</h2><p>上面的回归问题的例子对应的一个模型是:</p>
+<p>$$ h_{\Theta }(x)=\Theta_{0}+\Theta_{1}x_{1}+\Theta_{2}x_{2}^{2}+\Theta_{3}x_{3}^{3}+\Theta_{4}x_{4}^{4} $$</p>
+<p>正是 <strong>高次项</strong> 导致了过拟合的产生，如果能够使得高次项的系数接近于0的话，那么可以很好的进行拟合。正则化的基本方法就是在一定程度上减少这些 theta 的值。例如这里减少 theta_3 和 theta_4 的大小，修改代价函数，对 theta_3 和 theta_4 设置一些惩罚。修改之后如下：</p>
+<p>$$ min_{\Theta }\frac{1}{2m}[\sum_{i=1}^{m}(h_{\Theta }(x^{i})-y^{i})^{2}+1000\Theta_{3}^{2}+10000\Theta_{4}^{2}] $$</p>
+<p>这样的代价函数使得 theta_3 和 theta_4 对预测结果的影响比之前小了很多。假如数据集有很多特征，但是我们不知道需要对那些特征进行 <strong>惩罚</strong> ，那么我们对 <strong>所有</strong> 的特征进行惩罚，并且让可以使得代价函数最优化的软件选择 <strong>惩罚的程度</strong> 。于是，可以得到一个简单的能够防止过拟合的假设：</p>
+<p>$$ J(\Theta)=\frac{1}{2m}[\sum_{i=1}^{m}(h_{\Theta}(x^{i})-y^{i})^{2}+\lambda\sum_{j=1}^{n}\Theta_{j}^{2}] $$</p>
+<p>这里的\( \lambda \)叫做正则化参数（Regularization Parameter）。一般情况下，我们不会对 theta_0 进行惩罚。经过正则化处理的模型和元模型的可能对比。</p>
+<p><img src="https://i.loli.net/2020/06/27/d9KJHrtm428oxRI.png" alt=""></p>
+<p>如果选择的正则化参数过大，导致所以的参数最小化，模型退化成为</p>
+<p>$$ h_{\Theta}(x)=\Theta_{0} $$</p>
+<p>即出现欠拟合情况。因此，对于正则化，需要选择一个合适的\( \lambda \)作为正则化参数。</p>
+<h2 id="7-3-正则化线性回归"><a href="#7-3-正则化线性回归" class="headerlink" title="7.3 正则化线性回归"></a>7.3 正则化线性回归</h2><p>求解线性回归的方法，已经学习了两种：一种是使用 <strong>梯度下降算法</strong> ，一种是使用 <strong>正规方程</strong>。<br>正则化线性回归使用的代价函数：</p>
+<p>$$ J(\Theta)=\frac{1}{2m}[\sum_{i=1}^{m}(h_{\Theta}(x^{i})-y^{i})^{2}+\lambda\sum_{j=1}^{n}\Theta_{j}^{2}] $$</p>
+<p>如果使用梯度下降算法使得代价函数最小化，因为没有对 theta_0 进行正则化，那么梯度下降算法需要分为两种情形：  </p>
+<p>Repeat until convergence:<br>$$ \Theta_{0}:=\Theta_{0}-a\frac{1}{m}\sum_{i=1}^{m}((h_{\Theta}(x^{(i)})-y^{(i)})x_{0}^{(i)}) $$</p>
+<p>for j = 1,2,….n:</p>
+<p>$$ \Theta_{j}:=\Theta_{j}-a[\frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x^{(i)})-y^{(i)})x_{j}^{(i)}+\frac{\lambda}{m}\Theta _{j}] $$</p>
+<p>对第二个表达式进行微调可以得出：</p>
+<p>$$ \Theta_{j}:=\Theta_{j}(1-a\frac{\lambda }{m})-a[\frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x^{(i)})-y^{(i)})x_{j}^{(i)}] $$</p>
+<p>由此可见，正则化线性回归的梯度下降算法的变化在于，每次都在原有算法更新规则的基础之上令 theta 减少了一个额外的值。  </p>
+<p>使用正规方程求解正则化线性回归模型，方法如下：<br>$$ \Theta=\left ( X^{T}X+\lambda\begin{bmatrix}<br>0 &amp;  &amp; &amp;  &amp;  \\<br> &amp; 1 &amp;  &amp;  &amp;  \\<br> &amp;  &amp; 1 &amp;  &amp;  \\<br> &amp; &amp;  &amp; … &amp;  \\<br> &amp;  &amp;  &amp;  &amp; 1 \end{bmatrix} \right )^{-1}X^{T}y $$</p>
+<p>X的矩阵维度是m x (n + 1)， 图中的矩阵维度是(n + 1) x (n + 1)。</p>
+<h2 id="7-4-正则化的逻辑回归模型"><a href="#7-4-正则化的逻辑回归模型" class="headerlink" title="7.4 正则化的逻辑回归模型"></a>7.4 正则化的逻辑回归模型</h2><p>eg.逻辑回归模型是分类模型，不是回归模型。  </p>
+<p>对于逻辑回归问题，学过两种优化的方法，一种是使用 <strong>梯度下降算法</strong> 优化代价函数，另外一种是使用 <strong>高级算法</strong> 。</p>
+<p><img src="https://i.loli.net/2020/06/27/b8Ldrc41R3E2iya.png" alt=""></p>
+<p>这里对逻辑回归的代价函数添加正则项得到表达式：</p>
+<p>$$ J(\Theta)=\frac{1}{m}\prod_{i=1}^{m}(-y^{(i)}log(h_{\Theta}(x^{(i)}))-(1-y^{(i)})log(1-h_{\Theta}(x^{(i)}))+\frac{\lambda }{2m}\sum_{j=1}^{n}\Theta _{j}^{2} $$</p>
+<p>python计算代价函数的代码：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">def</span> <span class="token function">sigmoid</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    z <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>z<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">costReg</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>theta<span class="token punctuation">)</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    first <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span>y<span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    second <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    reg <span class="token operator">=</span> <span class="token punctuation">(</span>learningRate <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>theta<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span>theta<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>first <span class="token operator">+</span> second<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> reg</code></pre>
+<p>使用梯度下降算法需要求导： </p>
+<p>Repeat until convergence:<br>$$ \Theta_{0}:=\Theta_{0}-a\frac{1}{m}\sum_{i=1}^{m}((h_{\Theta}(x^{(i)})-y^{(i)})x_{0}^{(i)}) $$</p>
+<p>for j = 1,2,….n:</p>
+<p>$$ \Theta_{j}:=\Theta_{j}-a[\frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x^{(i)})-y^{(i)})x_{j}^{(i)}+\frac{\lambda}{m}\Theta _{j}] $$  </p>
+<p>注：看上去似乎和前面相同，但是注意 </p>
+<p>$$ h_{\Theta }(x)=g(\Theta ^{T}x) $$ </p>
+<p>因此，这里和线性回归还是不相同的。在Octave中可以使用fminuc求解代价函数最小化的参数，这里 theta_0 的更新规则和其他的情况不同。注意两点：</p>
+<ul>
+<li>正则化的逻辑回归中梯度下降和正则化的线性回归中的梯度下降的表达式相似，但是实际上因为 \( h_{\Theta }(x) \)不同还是有很大的差别</li>
+<li>\( \Theta_{0} \) <strong>不参与</strong> 任何一个正则化</li>
 </ul>
 
             </div>
@@ -453,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zuimeiyujianni.github.io/2020/06/10/7567.html">https://zuimeiyujianni.github.io/2020/06/10/7567.html</a>
+                    <a href="https://zuimeiyujianni.github.io/2020/06/27/3866.html">https://zuimeiyujianni.github.io/2020/06/27/3866.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -491,8 +558,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C/">
-                                    <span class="chip bg-color">学习经验</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
+                                    <span class="chip bg-color">吴恩达机器学习课程</span>
+                                </a>
+                            
+                                <a href="/tags/Regularization/">
+                                    <span class="chip bg-color">Regularization</span>
                                 </a>
                             
                         </div>
@@ -660,7 +735,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Wed Jun 10 2020 13:45:44 GMT+0800',
+    id: 'Sat Jun 27 2020 13:21:42 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -691,13 +766,13 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/10/60452.html">
+                <a href="/2020/06/27/27949.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="高数 求导与积分公式">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Machine Learning Exercises In Python, Part1">
                         
-                        <span class="card-title">高数 求导与积分公式</span>
+                        <span class="card-title">Machine Learning Exercises In Python, Part1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -705,68 +780,16 @@ gitment.render('gitment-content');
                         
                             
 
-
-
+Machine Learning Exercises In Python, Part1import os
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot a
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%AB%98%E6%95%B0/" class="post-category">
-                                    高数
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%AB%98%E6%95%B0/">
-                        <span class="chip bg-color">高数</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/06/09/39058.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="机器学习 Logistic Regression">
-                        
-                        <span class="card-title">机器学习 Logistic Regression</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-
-机器学习 Logistic RegressionLogistic Regression是目前最流行使用最广泛的一种学习算法。常见的分类任务：
-
-Email: Spam / Not Spam ?
-Online Transcations: 
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -790,8 +813,67 @@ Online Transcations:
                         <span class="chip bg-color">吴恩达机器学习课程</span>
                     </a>
                     
-                    <a href="/tags/Logistic-Regression/">
-                        <span class="chip bg-color">Logistic Regression</span>
+                    <a href="/tags/Machine-Learning-Exercises/">
+                        <span class="chip bg-color">Machine Learning Exercises</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/17/40957.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="python语法 Pandas">
+                        
+                        <span class="card-title">python语法 Pandas</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            python语法 PandasPandas数据结构
+Series:&ensp;一维数组 系列 ，也称 序列 。和Numpy中的array以及Python中的list相似。
+DataFrame:&ensp;二维的表格型数据结构，可以把Data
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python%E8%AF%AD%E6%B3%95/" class="post-category">
+                                    python语法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/pandas/">
+                        <span class="chip bg-color">pandas</span>
+                    </a>
+                    
+                    <a href="/tags/python%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">python语法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
