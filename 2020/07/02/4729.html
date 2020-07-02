@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Machine Learning Exercises In Python, Part2, 海洋之心">
+    <meta name="keywords" content="机器学习 Neural Networks:Representation, 海洋之心">
     <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Machine Learning Exercises In Python, Part2 | 海洋之心</title>
+    <title>机器学习 Neural Networks:Representation | 海洋之心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Machine Learning Exercises In Python, Part2</h1>
+                    <h1 class="description center-align post-title">机器学习 Neural Networks:Representation</h1>
                 </div>
             </div>
         </div>
@@ -365,33 +365,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">机器学习</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
-                                <span class="chip bg-color">吴恩达机器学习课程</span>
-                            </a>
-                        
-                            <a href="/tags/Machine-Learning-Exercises/">
-                                <span class="chip bg-color">Machine Learning Exercises</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                机器学习
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -400,28 +379,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-28
+                    2020-07-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-28
+                    2020-07-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    507
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -431,96 +410,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<h1 id="Machine-Learning-Exercises-In-Python-Part2"><a href="#Machine-Learning-Exercises-In-Python-Part2" class="headerlink" title="Machine Learning Exercises In Python, Part2"></a>Machine Learning Exercises In Python, Part2</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-
-path <span class="token operator">=</span> r<span class="token string">'D:\ML\data\ex1data2.txt'</span>
-data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>path<span class="token punctuation">,</span> header<span class="token operator">=</span>None<span class="token punctuation">,</span> names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Size'</span><span class="token punctuation">,</span> <span class="token string">'Bedrooms'</span><span class="token punctuation">,</span> <span class="token string">'Price'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-data<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2020/06/28/DAcOaLyBsJV32Pe.png" alt="查看数据的前5行"></p>
-<p>查看数据的描述：  </p>
-<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2020/06/28/LvcA6TEptkHY9nG.png" alt="数据的描述"></p>
-<p>对数据进行特征缩放：</p>
-<p><img src="https://i.loli.net/2020/06/28/odqk46WOAHUfnKQ.png" alt="4中特种缩放的方法"></p>
-<pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> <span class="token punctuation">(</span>data <span class="token operator">-</span> data<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> data<span class="token punctuation">.</span>std<span class="token punctuation">(</span><span class="token punctuation">)</span>
-data<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2020/06/28/CV3IquAQJjfGcyb.png" alt="特征缩放结果"></p>
-<p>梯度下降函数和代价函数如下：  </p>
-<p>$$ J(\Theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\Theta}(x^{i})-y^{i})^{2} $$</p>
-<p>Repeat until convergence:<br>$$ \Theta_{0}:=\Theta_{0}-a\frac{1}{m}\sum_{i=1}^{m}((h_{\Theta}(x^{(i)})-y^{(i)})x_{0}^{(i)}) $$</p>
-<p>for j = 1,2,….n:</p>
-<p>$$ \Theta_{j}:=\Theta_{j}-a\frac{1}{m}\sum_{i=1}^{m}(h_{\Theta}(x^{(i)})-y^{(i)})x_{j}^{(i)}) $$</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#定义代价函数</span>
-<span class="token keyword">def</span> <span class="token function">computeCost</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> theta<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    inner <span class="token operator">=</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span><span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">-</span> y<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>inner<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">#定义梯度下降函数</span>
-<span class="token keyword">def</span> <span class="token function">gradientDescent</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> iters<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    temp <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>theta<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    parameters <span class="token operator">=</span> theta<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    cost <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>iters<span class="token punctuation">)</span>
-
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>iters<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        error <span class="token operator">=</span> <span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">-</span> y
-
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>parameters<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            term <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>error<span class="token punctuation">,</span> X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            temp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> theta<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token punctuation">(</span>alpha <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>term<span class="token punctuation">)</span>
-
-        theta <span class="token operator">=</span> temp
-        cost<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> computeCost<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> theta<span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> theta<span class="token punctuation">,</span> cost</code></pre>
-<p>进行初始化操作：</p>
-<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'Ones'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-
-cols <span class="token operator">=</span> data<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-X <span class="token operator">=</span> data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">:</span>cols<span class="token number">-1</span><span class="token punctuation">]</span>
-y <span class="token operator">=</span> data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> cols<span class="token number">-1</span><span class="token punctuation">:</span>cols<span class="token punctuation">]</span>
-
-X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
-y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
-theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-<p>设置学习率和迭代次数：</p>
-<pre class=" language-python"><code class="language-python">alpha <span class="token operator">=</span> <span class="token number">0.01</span>
-iters <span class="token operator">=</span> <span class="token number">1000</span>
-
-computeCost<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> theta<span class="token punctuation">)</span></code></pre>
-<p>运行结果：<code>0.48936170212765967</code></p>
-<p>进行运算：</p>
-<pre class=" language-python"><code class="language-python">g<span class="token punctuation">,</span> cost <span class="token operator">=</span> gradientDescent<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> iters<span class="token punctuation">)</span>
-computeCost<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> g<span class="token punctuation">)</span></code></pre>
-<p>运行结果：<code>0.13070336960771892</code></p>
-<p>绘制迭代次数和训练轮次的函数：</p>
-<pre class=" language-python"><code class="language-python">fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>iters<span class="token punctuation">)</span><span class="token punctuation">,</span> cost<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#表示红色</span>
-ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Iterations'</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Cost'</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Erro vs. Training Epoch'</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2020/06/28/DaksnQMx8u1Hfrv.png" alt=""></p>
-<p>在机器学习领域，可以使用python的<code>scikit-learn</code>。下面演示使用<code>scikit-learn</code>的线性回归模型。<br>这里以第一个练习中的人口和利润的例子为例：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn <span class="token keyword">import</span> linear_model
-model <span class="token operator">=</span> linear_model<span class="token punctuation">.</span>LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
-model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#训练数据</span>
-
-x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>A1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#把矩阵转换成一个数组ndarray类型</span>
-f <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> f<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Prediction'</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data<span class="token punctuation">.</span>Population<span class="token punctuation">,</span> data<span class="token punctuation">.</span>Profit<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Training Data'</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Population'</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Profit'</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Predicted Profit vs. Population Size'</span><span class="token punctuation">)</span></code></pre>
-<p><img src="https://i.loli.net/2020/06/28/Xj6OdfcAuapPnte.png" alt="运行结果"></p>
-
+                
             </div>
             <hr/>
 
@@ -545,7 +435,7 @@ ax<span class="token punctuation">.</span>set_title<span class="token punctuatio
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zuimeiyujianni.github.io/2020/06/28/27756.html">https://zuimeiyujianni.github.io/2020/06/28/27756.html</a>
+                    <a href="https://zuimeiyujianni.github.io/2020/07/02/4729.html">https://zuimeiyujianni.github.io/2020/07/02/4729.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -582,19 +472,7 @@ ax<span class="token punctuation">.</span>set_title<span class="token punctuatio
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">机器学习</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
-                                    <span class="chip bg-color">吴恩达机器学习课程</span>
-                                </a>
-                            
-                                <a href="/tags/Machine-Learning-Exercises/">
-                                    <span class="chip bg-color">Machine Learning Exercises</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -760,7 +638,7 @@ ax<span class="token punctuation">.</span>set_title<span class="token punctuatio
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Jun 28 2020 01:07:03 GMT+0800',
+    id: 'Thu Jul 02 2020 16:35:16 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -787,9 +665,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/07/02/4729.html">
                     <div class="card-image">
@@ -807,9 +686,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -818,6 +697,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -828,13 +708,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/27/27949.html">
+                <a href="/2020/06/28/27756.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Machine Learning Exercises In Python, Part1">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Machine Learning Exercises In Python, Part2">
                         
-                        <span class="card-title">Machine Learning Exercises In Python, Part1</span>
+                        <span class="card-title">Machine Learning Exercises In Python, Part2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -842,7 +722,7 @@ gitment.render('gitment-content');
                         
                             
 
-Machine Learning Exercises In Python, Part1import os
+Machine Learning Exercises In Python, Part2import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot a
@@ -850,7 +730,7 @@ import matplotlib.pyplot a
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
                             </span>
                         <span class="publish-author">
                             
