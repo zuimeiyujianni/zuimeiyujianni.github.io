@@ -414,7 +414,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.7k
                 </div>
                 
 
@@ -480,7 +480,7 @@
 <h2 id="8-6-特征和直观理解II（Example-and-Intuitions）"><a href="#8-6-特征和直观理解II（Example-and-Intuitions）" class="headerlink" title="8.6 特征和直观理解II（Example and Intuitions）"></a>8.6 特征和直观理解II（Example and Intuitions）</h2><p>可以使用神经元组合成复杂的神经网络用来实现更加复杂的操作。例如实现XNOR功能，即同或，输入的两个值必须相同输出才为 1 。即<br> XNOR \( = (x_{1} \) AND \( x_{2}) \) OR \( (( \) NOT \( x_{1}) \) AND \( ( \) NOT \( x_{2})) \)</p>
 <p><img src="https://i.loli.net/2020/07/04/tJz7o1kgHfnbvEQ.png" alt=""></p>
 <p>由此可见，神经网络可以逐渐构造出复杂的函数。</p>
-<h2 id="8-7-多类分类"><a href="#8-7-多类分类" class="headerlink" title="8.7 多类分类"></a>8.7 多类分类</h2><p>如果需要进行分类，并且不止有两种类别的时候，使用 1 和 0 已经不适合了。例如，训练一个神经网络判断路人，汽车，摩托车和卡车。那么输出层应该输出四个值，第一个值表示预测为路人的概率，第二个值为预测为汽车的概率，第三个值为预测为摩托车的概率，第四个值为预测为卡车的概率。  </p>
+<h2 id="8-7-多类分类（Multiclass-Classification）"><a href="#8-7-多类分类（Multiclass-Classification）" class="headerlink" title="8.7 多类分类（Multiclass Classification）"></a>8.7 多类分类（Multiclass Classification）</h2><p>如果需要进行分类，并且不止有两种类别的时候，使用 1 和 0 已经不适合了。例如，训练一个神经网络判断路人，汽车，摩托车和卡车。那么输出层应该输出四个值，第一个值表示预测为路人的概率，第二个值为预测为汽车的概率，第三个值为预测为摩托车的概率，第四个值为预测为卡车的概率。  </p>
 <p>下面的神经网络输入向量有三个特征值，隐藏层有两层。输出层的四个神经元分别来表示4类。每一个数据在该模型对应的输出层为 \( \begin{bmatrix}<br>a &amp; b &amp; c &amp; d<br>\end{bmatrix}^{T} \)，并且\( a, b, c, d \)中仅有一个为 1 。</p>
 <p><img src="https://i.loli.net/2020/07/04/9PVDsYaNkCih5AH.png" alt="多类分类的神经网络"></p>
 <p><img src="https://i.loli.net/2020/07/04/WZ2LqhCbwMFxcrG.png" alt=""></p>
@@ -753,18 +753,17 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/02/4729.html">
+                <a href="/2020/07/04/40760.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="机器学习 Neural Networks:Representation">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="机器学习 Neural Networks:Learning">
                         
-                        <span class="card-title">机器学习 Neural Networks:Representation</span>
+                        <span class="card-title">机器学习 Neural Networks:Learning</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -772,15 +771,13 @@ gitment.render('gitment-content');
                         
                             
 
-机器学习 Neural Networks:Representation8.1 非线性假设（Non-linear Hypotheses）线性回归和逻辑回归存在缺点：当 特征数量 多时候，计算量 非常巨大。
-
-当只包含特征X_1和X_2时，
+机器学习 Neural Networks:Learning9.1 代价函数（Cost Function）假设神经网络的训练样本共有 m 个，每个包含一组输入 x 和一组输出信号 y ，L 表示神经网络层数，\( S_{I} \)表示第I
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -793,7 +790,6 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -805,8 +801,8 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">吴恩达机器学习课程</span>
                     </a>
                     
-                    <a href="/tags/Neural-Networks-Representation/">
-                        <span class="chip bg-color">Neural Networks:Representation</span>
+                    <a href="/tags/Neural-Networks-Learning/">
+                        <span class="chip bg-color">Neural Networks:Learning</span>
                     </a>
                     
                 </div>
@@ -1075,7 +1071,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.9k</span>&nbsp;字
+                class="white-color">26.1k</span>&nbsp;字
             
             
             
