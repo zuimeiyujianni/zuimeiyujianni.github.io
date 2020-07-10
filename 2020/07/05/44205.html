@@ -1,0 +1,1380 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Machine Learning Exercises In Python, Part3, 海洋之心">
+    <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Machine Learning Exercises In Python, Part3 | 海洋之心</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">海洋之心</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">海洋之心</div>
+        <div class="logo-desc">
+            
+            感谢你如此耀眼，做我平淡岁月里的星辰
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Machine Learning Exercises In Python, Part3</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
+                                <span class="chip bg-color">吴恩达机器学习课程</span>
+                            </a>
+                        
+                            <a href="/tags/Machine-Learning-Exercises/">
+                                <span class="chip bg-color">Machine Learning Exercises</span>
+                            </a>
+                        
+                            <a href="/tags/Logistic-Regression/">
+                                <span class="chip bg-color">Logistic Regression</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h1 id="Machine-Learning-Exercises-In-Python-Part3"><a href="#Machine-Learning-Exercises-In-Python-Part3" class="headerlink" title="Machine Learning Exercises In Python, Part3"></a>Machine Learning Exercises In Python, Part3</h1><h2 id="第一部分：尝试使用逻辑回归，没有正则化项"><a href="#第一部分：尝试使用逻辑回归，没有正则化项" class="headerlink" title="第一部分：尝试使用逻辑回归，没有正则化项"></a>第一部分：尝试使用逻辑回归，没有正则化项</h2><p>导入数据并查看前5行</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token keyword">import</span> os
+path <span class="token operator">=</span> r<span class="token string">'D:\ML\data\ex2data1.txt'</span>
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>path<span class="token punctuation">,</span> header<span class="token operator">=</span>None<span class="token punctuation">,</span> names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Exam 1'</span><span class="token punctuation">,</span> <span class="token string">'Exam 2'</span><span class="token punctuation">,</span> <span class="token string">'Admitted'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+data<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://i.loli.net/2020/07/05/aG7ZkFTDeUKx5Lj.png" alt=""></p>
+<p>使用 Exam 1 和 Exam 2 作为横纵坐标，绘制散点图。根据类别的不同使用不同的点表示。</p>
+<pre class=" language-python"><code class="language-python">positive <span class="token operator">=</span> data<span class="token punctuation">[</span>data<span class="token punctuation">[</span><span class="token string">'Admitted'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+negative <span class="token operator">=</span> data<span class="token punctuation">[</span>data<span class="token punctuation">[</span><span class="token string">'Admitted'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>positive<span class="token punctuation">[</span><span class="token string">'Exam 1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> positive<span class="token punctuation">[</span><span class="token string">'Exam 2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Admitted'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>negative<span class="token punctuation">[</span><span class="token string">'Exam 1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> negative<span class="token punctuation">[</span><span class="token string">'Exam 2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'x'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Not Admitted'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#设置图例的位置</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Exam 1 Score'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Exam 2 Score'</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f02d6fa14195aa594e90502.jpg" alt=""></p>
+<p>注意sigmoid函数的使用方法</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sigmoid</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+nums <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> step<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#设置定义域，nums是ndarry类型</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>nums<span class="token punctuation">,</span> sigmoid<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#绘制图像，参数是定义域，函数图像，图像的颜色，r表示红色</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f02d74414195aa594e921f8.jpg" alt=""></p>
+<p>给出逻辑回归的正则化代价函数：</p>
+<p>$$ J(\Theta)=\frac{1}{m}\prod_{i=1}^{m}(-y^{(i)}log(h_{\Theta}(x^{(i)}))-(1-y^{(i)})log(1-h_{\Theta}(x^{(i)}))+\frac{\lambda }{2m}\sum_{j=1}^{n}\Theta _{j}^{2} $$</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#待见函数参照公式进行编写（这里没有添加正则化项）</span>
+<span class="token keyword">def</span> <span class="token function">cost</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>theta<span class="token punctuation">)</span>
+    first <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span>y<span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    second <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>first <span class="token operator">+</span> second<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+<p>这里先介绍一下 numpy.matrix使用方法：</p>
+<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'*'</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'*'</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#矩阵的点乘</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'*'</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a <span class="token operator">*</span> b<span class="token punctuation">.</span>T<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#标准的矩阵乘法</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'*'</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>T <span class="token operator">*</span> b<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#标准的矩阵乘法</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f02d9bf14195aa594ea3515.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#插入一列，使得处理更加的方便</span>
+data<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'Ones'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+cols <span class="token operator">=</span> data<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+X <span class="token operator">=</span> data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">:</span>cols<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 注意，这里的 X，y不是numpy.matrix类型</span>
+y <span class="token operator">=</span> data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> cols<span class="token number">-1</span><span class="token punctuation">:</span>cols<span class="token punctuation">]</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#转换成numpy.matrix类型</span>
+X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">.</span>values<span class="token punctuation">)</span></code></pre>
+<p>初始化未知的参数</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>cols<span class="token punctuation">)</span>
+theta <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>cols<span class="token number">-1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span></code></pre>
+<p>查看X, y, theta的类型和大小。其中，X,y是二维数组，theta是一维数组。</p>
+<p><img src="https://pic.downk.cc/item/5f02db7514195aa594ead769.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 演示ravel函数作用</span>
+t <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f02e01b14195aa594ec8aba.jpg" alt="函数运行结果"></p>
+<p>下面给出梯度下降函数的公式</p>
+<p>$$<br>\frac{\partial}{\partial \Theta_{j}}J(\Theta)=\frac{1}{m}\sum_{i=1}^{m}[h_{\Theta}(x^{(i)})-y^{(i)}]x_{j}^{(i)}<br>$$</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#计算梯度</span>
+<span class="token keyword">def</span> <span class="token function">gradient</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>theta<span class="token punctuation">)</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+
+    parameter_nums <span class="token operator">=</span> int<span class="token punctuation">(</span>theta<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#ravle函数作用是把一个多维数组转换成一维数组</span>
+    grad <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>parameter_nums<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#保存梯度，返回值</span>
+
+    bias <span class="token operator">=</span> sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">-</span> y
+
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>parameter_nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        grad<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>bias<span class="token punctuation">,</span> X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">:</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> grad</code></pre>
+<p>代价函数、梯度计算方法、数据都准备好了。下面需要进行梯度下降。在Octave中一般使用fminunc方法进行计算代价函数的最优参数。这里使用Scipy中的优化API做同样的事情，可以用SciPy的“optimize”命名空间来做同样的事情。  </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> scipy<span class="token punctuation">.</span>optimize <span class="token keyword">as</span> opt
+
+result <span class="token operator">=</span> opt<span class="token punctuation">.</span>fmin_tnc<span class="token punctuation">(</span>func<span class="token operator">=</span>cost<span class="token punctuation">,</span> x0<span class="token operator">=</span>theta<span class="token punctuation">,</span> fprime<span class="token operator">=</span>gradient<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+cost<span class="token punctuation">(</span>result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token punctuation">)</span></code></pre>
+<p>运行结果：0.20349770158947425</p>
+<p>预测函数的实现：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#预测函数</span>
+<span class="token keyword">def</span> <span class="token function">predict</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    probability <span class="token operator">=</span> sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span> <span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">>=</span> <span class="token number">0.5</span> <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> probability<span class="token punctuation">]</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#计算一下准确率</span>
+theta_min <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+predications <span class="token operator">=</span> predict<span class="token punctuation">(</span>theta_min<span class="token punctuation">,</span> X<span class="token punctuation">)</span>
+correct <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span>a<span class="token operator">==</span><span class="token number">1</span> <span class="token operator">and</span> b<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span>a<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">and</span> b<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">for</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token keyword">in</span> zip<span class="token punctuation">(</span>predications<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">]</span>
+accuracy <span class="token operator">=</span> sum<span class="token punctuation">(</span>correct<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>correct<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'accuracy = {0}%'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>accuracy <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>运行结果：accuracy = 89.0%</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#数据的散点图</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>positive<span class="token punctuation">[</span><span class="token string">'Exam 1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> positive<span class="token punctuation">[</span><span class="token string">'Exam 2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Admitted'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>negative<span class="token punctuation">[</span><span class="token string">'Exam 1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> negative<span class="token punctuation">[</span><span class="token string">'Exam 2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'x'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Not Admitted'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#设置图例的位置</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Exam 1 Score'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Exam 2 Score'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#决策边界</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>min<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>max<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> step<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> <span class="token operator">-</span><span class="token punctuation">(</span>theta_min<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> x <span class="token operator">*</span> theta_min<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> theta_min<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Prediction'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#绘制函数图像</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f04098f14195aa5946d5436.jpg" alt="决策边界"></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#另外一种计算最优参数的方法，这里使用的是高级优化方法。只需传入cost函数，已经所求的变量theta，和梯度。cost函数定义变量时变量tehta要放在第一个，若cost函数只返回cost，则设置fprime=gradient。</span>
+<span class="token keyword">import</span> scipy<span class="token punctuation">.</span>optimize <span class="token keyword">as</span> opt
+res <span class="token operator">=</span> opt<span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>fun<span class="token operator">=</span>cost<span class="token punctuation">,</span> x0<span class="token operator">=</span>theta<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">'TNC'</span><span class="token punctuation">,</span> jac<span class="token operator">=</span>gradient<span class="token punctuation">)</span>
+res
+<span class="token comment" spellcheck="true"># help(opt.minimize) </span>
+<span class="token comment" spellcheck="true"># res.x  # final_theta</span></code></pre>
+<h2 id="第二部分：使用正则化的逻辑回归"><a href="#第二部分：使用正则化的逻辑回归" class="headerlink" title="第二部分：使用正则化的逻辑回归"></a>第二部分：使用正则化的逻辑回归</h2><blockquote>
+<p><strong>Problem Statement</strong><br>In this part of the exercise, we will implement regularized logistic regression to predict whether microchips from a fabrication plant passes quality assurance (QA). During QA,e ach microchip goes through various tests to ensure it is functioning correctly.Suppose we are the product manager of the factory and we have the rest results for some microchips on two different tests. From these two tests, we would like to determine whether the microchips should be accepted or rejected. To help us make a decision, we have a dataset of test results on past microchips, from which we can build a logistic regression model.</p>
+</blockquote>
+<p>现在已经实现了逻辑回归，下面就是使用 <strong>正则化</strong> 改进算法：Regularization是cost function中的一项，它使得算法prefer to “<strong><code>simpler</code></strong>“。它能够帮助减少overfitting和提高模型的泛化能力。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token keyword">import</span> os
+path <span class="token operator">=</span> r<span class="token string">'D:\ML\data\ex2data2.txt'</span>
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>path<span class="token punctuation">,</span> header<span class="token operator">=</span>None<span class="token punctuation">,</span> names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Test1'</span><span class="token punctuation">,</span> <span class="token string">'Test2'</span><span class="token punctuation">,</span> <span class="token string">'Accepted'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>进行数据的可视化：</p>
+<pre class=" language-python"><code class="language-python">positive <span class="token operator">=</span> data<span class="token punctuation">[</span>data<span class="token punctuation">[</span><span class="token string">'Accepted'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+negative <span class="token operator">=</span> data<span class="token punctuation">[</span>data<span class="token punctuation">[</span><span class="token string">'Accepted'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>positive<span class="token punctuation">[</span><span class="token string">'Test1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> positive<span class="token punctuation">[</span><span class="token string">'Test2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Accepted'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>negative<span class="token punctuation">[</span><span class="token string">'Test1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> negative<span class="token punctuation">[</span><span class="token string">'Test2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'x'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Rejected'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#设置图例的位置</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Test1 Score'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Test2 Score'</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f04648714195aa594939037.jpg" alt=""></p>
+<p>这里的数据比之前复杂了很多。可以注意到，没有Linear decision boundary 在数据集上可以表现的很好。一种解决这种逻辑回归等线性技术的方法是使用原来的特征进行新的特征的构造。可以尝试构造一系列多项式特征。把原来的两个特征改造成更高维度的特征向量，这样处理以后使用逻辑回归就会产生更加复杂的decision boundary并且表现出Non-Linear。</p>
+<pre class=" language-python"><code class="language-python">degree <span class="token operator">=</span> <span class="token number">5</span>
+x1 <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'Test 1'</span><span class="token punctuation">]</span>
+x2 <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'Test 2'</span><span class="token punctuation">]</span>
+
+data<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'Ones'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> degree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true">#添加特征</span>
+        data<span class="token punctuation">[</span><span class="token string">'F'</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> i<span class="token operator">-</span>j<span class="token punctuation">)</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>x2<span class="token punctuation">,</span> j<span class="token punctuation">)</span> 
+
+data<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'Test 1'</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#删除原始特征</span>
+data<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'Test 2'</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#删除原始特征</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f031eac14195aa594099154.jpg" alt="构造之后的数据集"></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#定义代价函数</span>
+<span class="token keyword">def</span> <span class="token function">costReg</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>theta<span class="token punctuation">)</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    first <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span>y<span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    second <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    reg <span class="token operator">=</span> <span class="token punctuation">(</span>learningRate <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">*</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>theta<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span>theta<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#偏差项的参数不进行惩罚</span>
+    <span class="token keyword">return</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>first <span class="token operator">+</span> second<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> reg
+
+<span class="token comment" spellcheck="true">#定义梯度计算的函数</span>
+<span class="token keyword">def</span> <span class="token function">gradientReg</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>theta<span class="token punctuation">)</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+
+    parameter_nums <span class="token operator">=</span> int<span class="token punctuation">(</span>theta<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    grad <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>parameter_nums<span class="token punctuation">)</span>
+
+    bias <span class="token operator">=</span> sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">-</span> y
+
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>parameter_nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        term <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>bias<span class="token punctuation">,</span> X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            grad<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>term<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            grad<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>term<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>learningRate <span class="token operator">/</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> theta<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>j<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> grad
+
+<span class="token keyword">def</span> <span class="token function">sigmoid</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#预测函数</span>
+<span class="token keyword">def</span> <span class="token function">predict</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    theta <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>theta<span class="token punctuation">)</span>
+    X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+    probability <span class="token operator">=</span> sigmoid<span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span> <span class="token number">1</span> <span class="token keyword">if</span> x <span class="token operator">>=</span> <span class="token number">0.5</span> <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> probability<span class="token punctuation">]</span></code></pre>
+<p>可以注意到，这里添加了一个正则项。随着参数的增大，添加到代价函数的惩罚也会增加。同样注意到，这里添加了一个学习率learningRate，它决定以何种程度对参数进行惩罚，如果learningRate特别大，那么预测函数会退化。</p>
+<pre class=" language-python"><code class="language-python">cols <span class="token operator">=</span> data<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+X <span class="token operator">=</span> data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span> <span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span>cols<span class="token punctuation">]</span>
+y <span class="token operator">=</span> data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span> <span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+X <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>X<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+y <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>y<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+
+theta <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>cols <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+learningRate <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> scipy<span class="token punctuation">.</span>optimize <span class="token keyword">as</span> opt
+
+result <span class="token operator">=</span> opt<span class="token punctuation">.</span>fmin_tnc<span class="token punctuation">(</span>func<span class="token operator">=</span>costReg<span class="token punctuation">,</span> x0<span class="token operator">=</span>theta<span class="token punctuation">,</span> fprime<span class="token operator">=</span>gradientReg<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> learningRate<span class="token punctuation">)</span><span class="token punctuation">)</span>
+result</code></pre>
+<pre class=" language-python"><code class="language-python">theta_min <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+predications <span class="token operator">=</span> predict<span class="token punctuation">(</span>theta_min<span class="token punctuation">,</span> X<span class="token punctuation">)</span>
+correct <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span>a<span class="token operator">==</span><span class="token number">1</span> <span class="token operator">and</span> b<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span>a<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">and</span> b<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">for</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token keyword">in</span> zip<span class="token punctuation">(</span>predications<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">]</span>
+accuracy <span class="token operator">=</span> sum<span class="token punctuation">(</span>correct<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>correct<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'accuracy = {0}%'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>accuracy <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>theta_min<span class="token punctuation">)</span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">王功胜</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zuimeiyujianni.github.io/2020/07/05/44205.html">https://zuimeiyujianni.github.io/2020/07/05/44205.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">王功胜</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
+                                    <span class="chip bg-color">吴恩达机器学习课程</span>
+                                </a>
+                            
+                                <a href="/tags/Machine-Learning-Exercises/">
+                                    <span class="chip bg-color">Machine Learning Exercises</span>
+                                </a>
+                            
+                                <a href="/tags/Logistic-Regression/">
+                                    <span class="chip bg-color">Logistic Regression</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sun Jul 05 2020 15:44:16 GMT+0800',
+    owner: '',
+    repo: '',
+    oauth: {
+        client_id: '',
+        client_secret: ''
+    }
+});
+
+gitment.render('gitment-content');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/07/05/44205.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Machine Learning Exercises In Python, Part3">
+                        
+                        <span class="card-title">Machine Learning Exercises In Python, Part3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+Machine Learning Exercises In Python, Part3第一部分：尝试使用逻辑回归，没有正则化项导入数据并查看前5行
+import numpy as np
+import pandas as pd
+impor
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">吴恩达机器学习课程</span>
+                    </a>
+                    
+                    <a href="/tags/Machine-Learning-Exercises/">
+                        <span class="chip bg-color">Machine Learning Exercises</span>
+                    </a>
+                    
+                    <a href="/tags/Logistic-Regression/">
+                        <span class="chip bg-color">Logistic Regression</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/04/40760.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="机器学习 Neural Networks:Learning">
+                        
+                        <span class="card-title">机器学习 Neural Networks:Learning</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+机器学习 Neural Networks:Learning9.1 代价函数（Cost Function）假设神经网络的训练样本共有 m 个，每个包含一组输入 x 和一组输出信号 y ，L 表示神经网络层数，\( S_{I} \)表示第I
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">吴恩达机器学习课程</span>
+                    </a>
+                    
+                    <a href="/tags/Neural-Networks-Learning/">
+                        <span class="chip bg-color">Neural Networks:Learning</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">王功胜</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">28.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/zuimeiyujianni" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2547668411@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2547668411" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2547668411" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

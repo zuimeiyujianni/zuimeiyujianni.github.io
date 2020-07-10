@@ -367,16 +367,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/pandas/">
+                                <span class="chip bg-color">pandas</span>
+                            </a>
+                        
                             <a href="/tags/python%E8%AF%AD%E6%B3%95/">
                                 <span class="chip bg-color">python语法</span>
                             </a>
                         
                             <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
                                 <span class="chip bg-color">数据分析</span>
-                            </a>
-                        
-                            <a href="/tags/pandas/">
-                                <span class="chip bg-color">pandas</span>
                             </a>
                         
                     </div>
@@ -407,21 +407,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-17
+                    2020-07-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -601,6 +601,23 @@ s2 <span class="token operator">=</span> s<span class="token punctuation">.</spa
 <li>Series由索引，把索引看成 <strong>数据的标签</strong> ，类似于字典</li>
 </ul>
 <h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><p>DataFrame 数据框用于存储多行和多列的数据集合，是 Series的容器。</p>
+<h4 id="axis使用"><a href="#axis使用" class="headerlink" title="axis使用"></a>axis使用</h4><p>axis使用的时候只需要知道它的作用是指明方向即可。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"col1"</span><span class="token punctuation">,</span> <span class="token string">"col2"</span><span class="token punctuation">,</span> <span class="token string">"col3"</span><span class="token punctuation">,</span> <span class="token string">"col4"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df</code></pre>
+<p><img src="https://pic.downk.cc/item/5f04611714195aa59491cd8c.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#在pandas中，axis=1作用于某一行，axis=0作用于某一列</span>
+df<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#作用于一行</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f04613a14195aa59491e114.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> df<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#作用于一列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token string">'col1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span><span class="token string">'col2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span><span class="token string">'col3'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span><span class="token string">'col4'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f04615f14195aa59491f1a0.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">"col4"</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#原来的df实际上没有发生变化</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f04618114195aa5949203ec.jpg" alt=""></p>
+<pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token number">0</span> <span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://pic.downk.cc/item/5f0461a214195aa59492160b.jpg" alt=""></p>
 
             </div>
             <hr/>
@@ -664,16 +681,16 @@ s2 <span class="token operator">=</span> s<span class="token punctuation">.</spa
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/pandas/">
+                                    <span class="chip bg-color">pandas</span>
+                                </a>
+                            
                                 <a href="/tags/python%E8%AF%AD%E6%B3%95/">
                                     <span class="chip bg-color">python语法</span>
                                 </a>
                             
                                 <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
                                     <span class="chip bg-color">数据分析</span>
-                                </a>
-                            
-                                <a href="/tags/pandas/">
-                                    <span class="chip bg-color">pandas</span>
                                 </a>
                             
                         </div>
@@ -1174,7 +1191,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.1k</span>&nbsp;字
+                class="white-color">28.2k</span>&nbsp;字
             
             
             
