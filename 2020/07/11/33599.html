@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode 29.顺时针打印矩阵, 海洋之心">
+    <meta name="keywords" content="2020.7.11学习内容记录, 海洋之心">
     <meta name="description" content="感谢你如此耀眼，做我平淡岁月里的星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode 29.顺时针打印矩阵 | 海洋之心</title>
+    <title>2020.7.11学习内容记录 | 海洋之心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode 29.顺时针打印矩阵</h1>
+                    <h1 class="description center-align post-title">2020.7.11学习内容记录</h1>
                 </div>
             </div>
         </div>
@@ -367,8 +367,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%B0%E5%BD%95/">
+                                <span class="chip bg-color">学习内容记录</span>
                             </a>
                         
                     </div>
@@ -379,8 +379,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/" class="post-category">
-                                基础算法练习
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%B0%E5%BD%95/" class="post-category">
+                                学习内容记录
                             </a>
                         
                     </div>
@@ -392,21 +392,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-05
+                    2020-07-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-05
+                    2020-07-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    314
+                    13
                 </div>
                 
 
@@ -423,60 +423,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LeetCode-29-顺时针打印矩阵"><a href="#LeetCode-29-顺时针打印矩阵" class="headerlink" title="LeetCode 29.顺时针打印矩阵"></a>LeetCode 29.顺时针打印矩阵</h1><p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。</p>
-<p>示例 1：</p>
-<p>输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]<br>输出：[1,2,3,6,9,8,7,4,5]<br>示例 2：</p>
-<p>输入：matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]<br>输出：[1,2,3,4,8,12,11,10,9,5,6,7]</p>
-<p>限制：</p>
-<p>0 &lt;= matrix.length &lt;= 100<br>0 &lt;= matrix[i].length &lt;= 100</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof" target="_blank" rel="noopener">https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">spiralOrder</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type matrix: List[List[int]]
-        :rtype: List[int]
-        """</span>
-        lenM <span class="token operator">=</span> len<span class="token punctuation">(</span>matrix<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> lenM <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-        lenN <span class="token operator">=</span> len<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> lenN <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-        i <span class="token operator">=</span> <span class="token number">0</span>
-        j <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
-        result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        change <span class="token operator">=</span> <span class="token boolean">True</span>
-
-        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> change <span class="token operator">==</span> <span class="token boolean">False</span><span class="token punctuation">:</span>
-                <span class="token keyword">break</span>
-            change <span class="token operator">=</span> <span class="token boolean">False</span>
-            <span class="token keyword">while</span> j <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> lenN <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                j <span class="token operator">=</span> j <span class="token operator">+</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">while</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> lenM <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">while</span> j <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                j <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">while</span> i <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">and</span> matrix<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
-                i <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>
-                result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0.1</span>
-                change <span class="token operator">=</span> <span class="token boolean">True</span>
-        <span class="token keyword">return</span> result
-</code></pre>
-<p><img src="https://i.loli.net/2020/06/05/Coqw2Sj9ytFAKLH.png" alt="运行结果"></p>
-
+                <h1 id="2020-7-11学习内容记录"><a href="#2020-7-11学习内容记录" class="headerlink" title="2020.7.11学习内容记录"></a>2020.7.11学习内容记录</h1><h2 id="模式识别"><a href="#模式识别" class="headerlink" title="模式识别"></a>模式识别</h2>
             </div>
             <hr/>
 
@@ -501,7 +448,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zuimeiyujianni.github.io/2020/06/05/47753.html">https://zuimeiyujianni.github.io/2020/06/05/47753.html</a>
+                    <a href="https://zuimeiyujianni.github.io/2020/07/11/33599.html">https://zuimeiyujianni.github.io/2020/07/11/33599.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,8 +486,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LeetCode/">
-                                    <span class="chip bg-color">LeetCode</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%B0%E5%BD%95/">
+                                    <span class="chip bg-color">学习内容记录</span>
                                 </a>
                             
                         </div>
@@ -708,7 +655,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jun 05 2020 21:25:31 GMT+0800',
+    id: 'Sat Jul 11 2020 13:28:20 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -739,34 +686,34 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/05/10789.html">
+                <a href="/2020/07/11/12890.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python语法 不定长参数">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="机器学习-生成灰度图片">
                         
-                        <span class="card-title">python语法 不定长参数</span>
+                        <span class="card-title">机器学习-生成灰度图片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python语法 不定长参数一、任意数量的参数值特点：一个函数只能有一个该参数，且只能放在最右边。
-def watermelon(name, *attributes):
-    print(name)
-    print(type(attr
+                            机器学习-生成灰度图片import matplotlib.image as mping
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage import color
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-11
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python%E8%AF%AD%E6%B3%95/" class="post-category">
-                                    python语法
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
@@ -776,8 +723,12 @@ def watermelon(name, *attributes):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">python语法</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/SVD/">
+                        <span class="chip bg-color">SVD</span>
                     </a>
                     
                 </div>
@@ -791,37 +742,38 @@ def watermelon(name, *attributes):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/04/47745.html">
+                <a href="/2020/07/05/44205.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="markdown基础">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Machine Learning Exercises In Python, Part3">
                         
-                        <span class="card-title">markdown基础</span>
+                        <span class="card-title">Machine Learning Exercises In Python, Part3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、标题# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题一级标题二级标题三级标题四级标题五级标题六级标题二、字体
-加粗使用两个星号进行左右包围
-斜体使用一个星号进行左右包围
-斜
+                            
+
+Machine Learning Exercises In Python, Part3第一部分：尝试使用逻辑回归，没有正则化项导入数据并查看前5行
+import numpy as np
+import pandas as pd
+impor
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            王功胜
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -829,8 +781,20 @@ def watermelon(name, *attributes):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/markdown/">
-                        <span class="chip bg-color">markdown</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">吴恩达机器学习课程</span>
+                    </a>
+                    
+                    <a href="/tags/Machine-Learning-Exercises/">
+                        <span class="chip bg-color">Machine Learning Exercises</span>
+                    </a>
+                    
+                    <a href="/tags/Logistic-Regression/">
+                        <span class="chip bg-color">Logistic Regression</span>
                     </a>
                     
                 </div>

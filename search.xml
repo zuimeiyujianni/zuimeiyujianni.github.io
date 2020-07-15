@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>机器学习-生成灰度图片</title>
+      <link href="/2020/07/11/12890.html"/>
+      <url>/2020/07/11/12890.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="机器学习-生成灰度图片"><a href="#机器学习-生成灰度图片" class="headerlink" title="机器学习-生成灰度图片"></a>机器学习-生成灰度图片</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>image <span class="token keyword">as</span> mping<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt<span class="token keyword">from</span> skimage <span class="token keyword">import</span> colorimagePath <span class="token operator">=</span> r<span class="token string">'D:\wallhaven\111.jpg'</span>image <span class="token operator">=</span> mping<span class="token punctuation">.</span>imread<span class="token punctuation">(</span>imagePath<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#读取</span>plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>image<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#显示图片</span></code></pre><p><img src="https://pic.downk.cc/item/5f09d05a14195aa59452e440.jpg" alt=""></p><pre class=" language-python"><code class="language-python">image_gray <span class="token operator">=</span> color<span class="token punctuation">.</span>rgb2gray<span class="token punctuation">(</span>image<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#转换成灰度图片</span>image_mat <span class="token operator">=</span> np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span>image_gray<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>image_mat<span class="token punctuation">,</span> cmap<span class="token operator">=</span>plt<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>gray<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>image_mat<span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre><p><img src="https://pic.downk.cc/item/5f09d0b014195aa5945300d5.jpg" alt=""></p><pre class=" language-python"><code class="language-python">k <span class="token operator">=</span> <span class="token number">20</span>u<span class="token punctuation">,</span> s<span class="token punctuation">,</span> vt <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>svd<span class="token punctuation">(</span>image_mat<span class="token punctuation">)</span>uk <span class="token operator">=</span> u<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">:</span>k<span class="token punctuation">]</span>sk <span class="token operator">=</span> np<span class="token punctuation">.</span>diag<span class="token punctuation">(</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span>vtk <span class="token operator">=</span> vt<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>k<span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span>image_svd <span class="token operator">=</span> uk <span class="token operator">*</span> sk <span class="token operator">*</span> vtkplt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>image_svd<span class="token punctuation">,</span> cmap<span class="token operator">=</span>plt<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>gray<span class="token punctuation">)</span></code></pre><p><img src="https://pic.downk.cc/item/5f09d0ee14195aa5945314c1.jpg" alt="k=700"></p><pre class=" language-python"><code class="language-python">k <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">700</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>u<span class="token punctuation">,</span> s<span class="token punctuation">,</span> vt <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>svd<span class="token punctuation">(</span>image_mat<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    uk <span class="token operator">=</span> u<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">:</span>k<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span>    sk <span class="token operator">=</span> np<span class="token punctuation">.</span>diag<span class="token punctuation">(</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>k<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>    vtk <span class="token operator">=</span> vt<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>k<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span>    image_svd <span class="token operator">=</span> uk <span class="token operator">*</span> sk <span class="token operator">*</span> vtk    plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>    plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>image_svd<span class="token punctuation">,</span> cmap<span class="token operator">=</span>plt<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>gray<span class="token punctuation">)</span></code></pre><p><img src="https://pic.downk.cc/item/5f09d39b14195aa59453f8dd.jpg" alt=""></p><p>SVD的内容在我的知乎收藏’线性代数’文件夹中</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> SVD </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2020.7.11学习内容记录</title>
+      <link href="/2020/07/11/33599.html"/>
+      <url>/2020/07/11/33599.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="2020-7-11学习内容记录"><a href="#2020-7-11学习内容记录" class="headerlink" title="2020.7.11学习内容记录"></a>2020.7.11学习内容记录</h1><h2 id="模式识别"><a href="#模式识别" class="headerlink" title="模式识别"></a>模式识别</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习内容记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习内容记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Machine Learning Exercises In Python, Part3</title>
       <link href="/2020/07/05/44205.html"/>
       <url>/2020/07/05/44205.html</url>
@@ -196,11 +248,11 @@
       
         <tags>
             
+            <tag> pandas </tag>
+            
             <tag> python语法 </tag>
             
             <tag> 数据分析 </tag>
-            
-            <tag> pandas </tag>
             
         </tags>
       
@@ -250,9 +302,9 @@
       
         <tags>
             
-            <tag> numpy </tag>
-            
             <tag> python </tag>
+            
+            <tag> numpy </tag>
             
             <tag> scipy </tag>
             
@@ -458,9 +510,9 @@
       
         <tags>
             
-            <tag> python语法 </tag>
-            
             <tag> numpy </tag>
+            
+            <tag> python语法 </tag>
             
             <tag> 数据分析 </tag>
             
